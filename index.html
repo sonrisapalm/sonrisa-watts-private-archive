@@ -11,126 +11,134 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #020617; color: #f8fafc; overflow-x: hidden; }
-        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        body { font-family: 'Inter', sans-serif; background-color: #020617; color: #f8fafc; }
         .text-gradient {
             background: linear-gradient(to right, #ffffff, #64748b);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         
-        .masonry-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            grid-auto-rows: 350px;
-            gap: 1.5rem;
+        /* The Secret Sauce: Pure Masonry without Cropping */
+        .masonry-container {
+            columns: 1;
+            column-gap: 1.5rem;
+            width: 100%;
         }
+        
+        @media (min-width: 768px) { .masonry-container { columns: 2; } }
+        @media (min-width: 1024px) { .masonry-container { columns: 3; } }
 
-        .media-item { 
-            position: relative; 
-            overflow: hidden; 
-            border-radius: 0.75rem; 
+        .media-card {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+            position: relative;
+            border-radius: 0.5rem;
+            overflow: hidden;
             border: 1px solid rgba(255,255,255,0.05);
             background: #070b14;
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            transition: all 0.4s ease;
         }
 
-        .item-tall { grid-row: span 2; }
-        .item-wide { grid-column: span 2; }
-
-        .media-item img, .media-item video { 
+        /* NO object-fit: cover here. We use auto height. */
+        .media-card img, .media-card video {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s ease;
+            height: auto;
+            display: block;
+            transition: transform 0.6s ease;
         }
 
-        .media-item:hover {
-            border-color: rgba(255,255,255,0.3);
-            transform: translateY(-5px);
-            z-index: 10;
+        .media-card:hover {
+            border-color: rgba(255,255,255,0.2);
+            transform: scale(1.01);
         }
 
-        .media-item:hover img, .media-item:hover video {
-            transform: scale(1.05);
-        }
-
-        @media (max-width: 768px) {
-            .item-wide { grid-column: span 1; }
-            .masonry-grid { grid-auto-rows: 300px; }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
     </style>
 </head>
 <body class="selection:bg-white/10 antialiased">
 
-    <header class="pt-16 pb-8 px-6 text-center">
-        <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-gradient leading-none mb-4">
+    <header class="pt-20 pb-12 px-6 text-center">
+        <h1 class="text-6xl md:text-8xl font-black tracking-tighter text-gradient leading-none mb-6">
             SONRISA WATTS
         </h1>
-        <p class="text-[10px] tracking-[0.5em] text-slate-500 font-bold uppercase mb-2">Portfolio Archive // 2026</p>
-        <p class="text-[9px] tracking-[0.3em] text-teal-500/80 uppercase">Born Dec 13, 2000</p>
+        <p class="text-[10px] tracking-[0.8em] text-slate-500 font-bold uppercase">St. Kitts & Nevis // Visual Identity</p>
     </header>
 
-    <main class="max-w-[1400px] mx-auto px-6 pb-20">
+    <main class="max-w-[1400px] mx-auto px-6 pb-24">
         
-        <div class="masonry-grid">
+        <div class="masonry-container">
             
-            <div class="media-item item-tall">
+            <div class="media-card">
                 <img src="images/sonrisawatts.jpg" alt="Sonrisa Watts">
             </div>
-            <div class="media-item">
-                <img src="images/sonriswatts (2).jpg" alt="Sonrisa Watts">
-            </div>
-            <div class="media-item">
-                <img src="images/sonriswatts (3).jpg" alt="Sonrisa Watts">
-            </div>
-            <div class="media-item item-wide">
+
+            <div class="media-card">
                 <video src="images/sonrisawatts.mp4" autoplay loop muted playsinline></video>
             </div>
 
-            <div class="media-item item-tall">
-                <img src="images/sonrisawatts20.jpg" alt="Sonrisa Watts New">
-            </div>
-            <div class="media-item">
-                <img src="images/sonrisawatts21.jpg" alt="Sonrisa Watts New">
-            </div>
-            <div class="media-item">
-                <img src="images/sonrisawatts22.jpg" alt="Sonrisa Watts New">
+            <div class="media-card">
+                <img src="images/sonrisawatts20.jpg" alt="Sonrisa Watts">
             </div>
 
-            <div class="media-item item-tall">
+            <div class="media-card">
+                <img src="images/sonriswatts (2).jpg" alt="Sonrisa Watts">
+            </div>
+
+            <div class="media-card">
                 <img src="images/sonrisawatts75.jpg" alt="Sonrisa Watts">
             </div>
-            <div class="media-item">
-                <img src="images/sonrisawatts00.jpg" alt="Sonrisa Watts">
-            </div>
-            <div class="media-item">
-                <img src="images/sonrisawatts9.jpg" alt="Sonrisa Watts">
-            </div>
-            <div class="media-item item-wide">
+
+            <div class="media-card">
                 <video src="images/sonrisawatts1.mp4" autoplay loop muted playsinline></video>
             </div>
 
-            <div class="media-item">
+            <div class="media-card">
+                <img src="images/sonrisawatts21.jpg" alt="Sonrisa Watts">
+            </div>
+
+            <div class="media-card">
+                <img src="images/sonriswatts (3).jpg" alt="Sonrisa Watts">
+            </div>
+
+            <div class="media-card">
+                <img src="images/sonrisawatts22.jpg" alt="Sonrisa Watts">
+            </div>
+
+            <div class="media-card">
+                <img src="images/sonrisawatts00.jpg" alt="Sonrisa Watts">
+            </div>
+
+            <div class="media-card">
+                <img src="images/sonrisawatts9.jpg" alt="Sonrisa Watts">
+            </div>
+
+            <div class="media-card">
                 <img src="images/sonrisawatts4.jpg" alt="Sonrisa Watts">
             </div>
-            <div class="media-item">
+
+            <div class="media-card">
                 <img src="images/sonrisawatts0.jpg" alt="Sonrisa Watts">
             </div>
-            <div class="media-item item-wide">
+
+            <div class="media-card">
                 <img src="images/sonrisawatts1.jpg" alt="Sonrisa Watts">
             </div>
 
         </div>
 
-        <nav class="mt-16 flex flex-col md:flex-row justify-center items-center gap-4">
-            <a href="about.html" class="px-8 py-3 glass text-[10px] font-bold tracking-[0.3em] uppercase hover:bg-white/10 transition-all w-full md:w-auto text-center">Biography</a>
-            <a href="Methodsanddata.html" class="px-8 py-3 glass text-[10px] font-bold tracking-[0.3em] uppercase hover:bg-white/10 transition-all w-full md:w-auto text-center">Methods</a>
-            <a href="contact.html" class="px-8 py-3 glass text-[10px] font-bold tracking-[0.3em] uppercase hover:bg-white/10 transition-all w-full md:w-auto text-center text-slate-500">Contact</a>
+        <nav class="mt-12 flex flex-wrap justify-center gap-4">
+            <a href="about.html" class="glass-nav px-10 py-4 text-[10px] font-bold tracking-[0.4em] uppercase hover:bg-white/5 transition-all">Bio</a>
+            <a href="Methodsanddata.html" class="glass-nav px-10 py-4 text-[10px] font-bold tracking-[0.4em] uppercase hover:bg-white/5 transition-all">Methods</a>
+            <a href="contact.html" class="glass-nav px-10 py-4 text-[10px] font-bold tracking-[0.4em] uppercase hover:bg-white/5 transition-all text-slate-500">Contact</a>
         </nav>
+
     </main>
 
-    <footer class="py-10 text-center text-slate-800 text-[9px] tracking-[0.6em] uppercase font-bold">
+    <footer class="py-10 text-center text-slate-800 text-[9px] tracking-[1em] uppercase font-bold">
         © 2026 // SONRISA WATTS
     </footer>
 
