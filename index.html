@@ -1,1 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonrisa Watts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Person",
+      "name": "Sonrisa Watts",
+      "url": "https://encodedemotion.org",
+      "image": [
+        "https://encodedemotion.org/images/sonrisawatts.jpg",
+        "https://encodedemotion.org/images/sonriswatts (2).jpg",
+        "https://encodedemotion.org/images/sonriswatts (3).jpg"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "St. Kitts and Nevis"
+      },
+      "sameAs": [
+        "https://www.instagram.com/sonrisawatts/",
+        "https://www.flickr.com/photos/204311437@N08/"
+      ]
+    }
+    </script>
 
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #020617; color: #f8fafc; }
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .text-gradient {
+            background: linear-gradient(to right, #ffffff, #64748b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Custom Masonry-like spacing */
+        .img-container { position: relative; overflow: hidden; border-radius: 1rem; transition: all 0.5s ease; }
+        .img-container:hover { transform: scale(1.02); border-color: rgba(255,255,255,0.2); }
+    </style>
+</head>
+<body class="selection:bg-white/10">
+
+    <main class="min-h-screen flex flex-col items-center justify-center px-6 py-20">
+        
+        <div class="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-7 grid grid-cols-2 gap-4">
+                <div class="col-span-2 img-container aspect-[16/9] border border-white/5">
+                    <img src="images/sonrisawatts.jpg" alt="Sonrisa Watts Portrait" class="w-full h-full object-cover">
+                </div>
+                <div class="img-container aspect-square border border-white/5">
+                    <img src="images/sonriswatts (2).jpg" alt="Sonrisa Watts St. Kitts" class="w-full h-full object-cover">
+                </div>
+                <div class="img-container aspect-square border border-white/5">
+                    <img src="images/sonriswatts (3).jpg" alt="Sonrisa Watts Lifestyle" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 flex flex-col items-center lg:items-start text-center lg:text-left">
+                <h1 class="text-7xl md:text-8xl font-black tracking-tighter mb-4 text-gradient leading-none">
+                    SONRISA <br> WATTS
+                </h1>
+                
+                <p class="text-lg text-slate-500 mb-12 font-light tracking-widest uppercase">
+                    St. Kitts & Nevis // 2026
+                </p>
+
+                <div class="flex flex-col w-full max-w-xs gap-4 mb-16">
+                    <a href="about.html" class="w-full py-4 glass text-center text-sm font-bold tracking-[0.3em] uppercase hover:bg-white/5 transition-all">Biography</a>
+                    <a href="Methodsanddata.html" class="w-full py-4 glass text-center text-sm font-bold tracking-[0.3em] uppercase hover:bg-white/5 transition-all">Archive</a>
+                    <a href="contact.html" class="w-full py-4 glass text-center text-sm font-bold tracking-[0.3em] uppercase hover:bg-white/5 transition-all text-slate-400">Contact</a>
+                </div>
+
+                <div class="flex gap-8 items-center">
+                    <a href="https://www.instagram.com/sonrisawatts/" target="_blank" class="text-slate-500 hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="https://www.flickr.com/photos/204311437@N08/" target="_blank" class="text-slate-500 hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="8" cy="12" r="3"></circle><circle cx="16" cy="12" r="3"></circle></svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="pb-10 text-center text-slate-800 text-[10px] tracking-[0.5em] uppercase font-bold">
+        Reflecting Emotion // St. Kitts & Nevis
+    </footer>
+
+</body>
+</html>
