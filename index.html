@@ -38,26 +38,20 @@
             break-inside: avoid;
             margin-bottom: 1rem;
             position: relative;
-            border-radius: 0.6rem;
+            border-radius: 0.5rem;
             overflow: hidden;
             border: 1px solid rgba(255,255,255,0.03);
             background: #070b14;
             transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-            cursor: pointer;
-            /* Animation for page load */
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 0.6s ease forwards;
         }
 
         @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Auto height ensures NO cropping */
         .media-card img, .media-card video {
             width: 100%;
             height: auto;
@@ -68,11 +62,10 @@
         .media-card:hover {
             border-color: rgba(255,255,255,0.15);
             box-shadow: 0 20px 40px -15px rgba(0,0,0,0.7);
-            z-index: 10;
         }
 
         .media-card:hover img, .media-card:hover video {
-            transform: scale(1.05);
+            transform: scale(1.04);
         }
 
         .glass-nav {
@@ -80,14 +73,13 @@
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 2px;
         }
     </style>
 </head>
 <body class="selection:bg-white/10 antialiased">
 
     <header class="pt-16 pb-12 px-6 text-center">
-        <h1 class="text-4xl md:text-7xl font-black tracking-tighter text-gradient leading-none mb-4">
+        <h1 class="text-4xl md:text-7xl font-black tracking-tighter text-gradient leading-none mb-2">
             SONRISA WATTS
         </h1>
         <p class="text-[9px] tracking-[0.8em] text-slate-500 font-bold uppercase">Archive Index // St. Kitts & Nevis</p>
@@ -97,18 +89,16 @@
         
         <div class="archive-container">
             
-            <div class="media-card" style="animation-delay: 0.1s;"><img src="images/sonrisawatts52.jpg" alt="Sonrisa Watts"></div>
-            <div class="media-card" style="animation-delay: 0.15s;"><img src="images/sonrisawatts.jpg" alt="Sonrisa Watts"></div>
-            <div class="media-card" style="animation-delay: 0.2s;"><video src="images/sonrisawatts.mp4" autoplay loop muted playsinline></video></div>
-            <div class="media-card" style="animation-delay: 0.25s;"><img src="images/sonrisawatts50.jpg" alt="Sonrisa Watts"></div>
-            <div class="media-card" style="animation-delay: 0.3s;"><img src="images/sonriswatts (3).jpg" alt="Sonrisa Watts"></div>
-            <div class="media-card" style="animation-delay: 0.35s;"><video src="images/sonrisawatts.mp4" autoplay loop muted playsinline></video></div>
-            <div class="media-card" style="animation-delay: 0.4s;"><img src="images/sonrisawatts53.jpg" alt="Sonrisa Watts"></div>
-            <div class="media-card" style="animation-delay: 0.45s;"><img src="images/sonrisawatts56.jpg" alt="Sonrisa Watts"></div>
-            <div class="media-card" style="animation-delay: 0.5s;"><img src="images/sonrisawattshair.jpg" alt="Sonrisa Watts Hair"></div>
-            <div class="media-card" style="animation-delay: 0.55s;"><img src="images/sonrisawatts51.jpg" alt="Sonrisa Watts"></div>
-
+            <div class="media-card"><img src="images/sonrisawatts52.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card"><img src="images/sonrisawatts.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card"><video src="images/sonrisawatts.mp4" autoplay loop muted playsinline></video></div>
             <div class="media-card"><img src="images/sonrisawatts50.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card"><img src="images/sonriswatts (3).jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card"><video src="images/sonrisawatts.mp4" autoplay loop muted playsinline></video></div>
+            <div class="media-card"><img src="images/sonrisawatts53.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card"><img src="images/sonrisawatts56.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card"><img src="images/sonrisawattshair.jpg" alt="Sonrisa Watts Hair"></div>
+            <div class="media-card"><img src="images/sonrisawatts51.jpg" alt="Sonrisa Watts"></div>
             <div class="media-card"><img src="images/sonrisawatts12.jpg" alt="Sonrisa Watts"></div>
             <div class="media-card"><img src="images/sonrisawatts40.jpg" alt="Sonrisa Watts"></div>
             <div class="media-card"><img src="images/sonrisawatts093.jpg" alt="Sonrisa Watts"></div>
@@ -118,24 +108,47 @@
             <div class="media-card"><img src="images/sonrisawatts75.jpg" alt="Sonrisa Watts"></div>
             <div class="media-card"><img src="images/sonrisawatts21.jpg" alt="Sonrisa Watts"></div>
             <div class="media-card"><img src="images/sonrisawatts22.jpg" alt="Sonrisa Watts"></div>
-
             <div class="media-card"><img src="images/sonrisawatts00.jpg" alt="Sonrisa Watts"></div>
             <div class="media-card"><img src="images/sonrisawatts9.jpg" alt="Sonrisa Watts"></div>
             <div class="media-card"><img src="images/sonrisawatts94.jpg" alt="Sonrisa Watts"></div>
             <div class="media-card"><img src="images/sonrisawatts4.jpg" alt="Sonrisa Watts"></div>
             <div class="media-card"><img src="images/sonrisawatts0.jpg" alt="Sonrisa Watts"></div>
             <div class="media-card"><img src="images/sonrisawatts1.jpg" alt="Sonrisa Watts"></div>
-            <div class="media-card"><img src="images/sonrisawatts.jpg" alt="Sonrisa Watts"></div>
             <div class="media-card"><img src="images/sonriswatts (2).jpg" alt="Sonrisa Watts"></div>
             <div class="media-card"><video src="images/sonrisawatts1.mp4" autoplay loop muted playsinline></video></div>
+            
             <div class="media-card"><img src="images/safiapalm.jpg" alt="Safia palm"></div>
-
+            <div class="media-card"><img src="images/safiapalm2.jpg" alt="Safia palm 2"></div>
             <div class="media-card"><img src="images/risapalm.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card"><video src="images/risapalm.mp4" autoplay loop muted playsinline></video></div>
+            <div class="media-card"><video src="images/risapalm2.mp4" autoplay loop muted playsinline></video></div>
             <div class="media-card"><video src="images/risapalm3.mp4" autoplay loop muted playsinline></video></div>
             <div class="media-card"><img src="images/risapalm1.jpg" alt="Sonrisa Watts"></div>
-            <div class="media-card"><video src="images/risapalm.mp4" autoplay loop muted playsinline></video></div>
+
+            <div class="media-card"><img src="images/IMG-20251018-WA0042 (1).jpg" alt="Sonrisa Watts Archive"></div>
+            <div class="media-card"><img src="images/IMG-20251018-WA0011.jpg" alt="Sonrisa Watts Archive"></div>
+            <div class="media-card"><img src="images/IMG-20251018-WA0000.jpg" alt="Sonrisa Watts Archive"></div>
+            <div class="media-card"><img src="images/2025-12-01-00-31-28-821.jpg" alt="Sonrisa Watts Archive"></div>
+            <div class="media-card"><img src="images/2025-12-01-00-04-06-506.jpg" alt="Sonrisa Watts Archive"></div>
+            <div class="media-card"><img src="images/IMG-20251018-WA0042.jpg" alt="Sonrisa Watts Archive"></div>
+            <div class="media-card"><img src="images/IMG-20251018-WA0041.jpg" alt="Sonrisa Watts Archive"></div>
+            <div class="media-card"><img src="images/IMG-20251018-WA0017.jpg" alt="Sonrisa Watts Archive"></div>
+            <div class="media-card"><img src="images/2025-12-03-08-42-04-558.jpg" alt="Sonrisa Watts Archive"></div>
+            <div class="media-card"><img src="images/2025-12-03-12-39-34-840.jpg" alt="Sonrisa Watts Archive"></div>
+            <div class="media-card"><img src="images/2025-12-03-11-46-59-873.jpg" alt="Sonrisa Watts Archive"></div>
+            <div class="media-card"><img src="images/sonrisawatts7 (1).jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card"><img src="images/2025-12-02-23-09-29-310.jpg" alt="Sonrisa Watts Archive"></div>
+            <div class="media-card"><img src="images/2025-12-01-09-57-05-769.jpg" alt="Sonrisa Watts Archive"></div>
+            <div class="media-card"><img src="images/2025-12-01-09-41-06-769.jpg" alt="Sonrisa Watts Archive"></div>
+            <div class="media-card"><img src="images/sonrisawatts7 (2).jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card"><img src="images/2025-12-01-04-22-56-815.jpg" alt="Sonrisa Watts Archive"></div>
+            <div class="media-card"><img src="images/2025-12-01-03-11-04-432.jpg" alt="Sonrisa Watts Archive"></div>
+            <div class="media-card"><img src="images/2025-10-23_04-38-12.jpg" alt="Sonrisa Watts Archive"></div>
+            <div class="media-card"><img src="images/update 3.jpg" alt="Sonrisa Watts Update"></div>
+            <div class="media-card"><img src="images/update2.jpg" alt="Sonrisa Watts Update"></div>
+            <div class="media-card"><img src="images/update.jpg" alt="Sonrisa Watts Update"></div>
+            <div class="media-card"><img src="images/495383937_23874224295534835_237346029115264525_n.jpg" alt="Sonrisa Watts Archive"></div>
             <div class="media-card"><img src="images/sonrisawatts78.jpg" alt="Sonrisa Watts"></div>
-            <div class="media-card"><video src="images/risapalm2.mp4" autoplay loop muted playsinline></video></div>
             <div class="media-card"><img src="images/sonrisawatts24.jpg" alt="Sonrisa Watts"></div>
 
         </div>
