@@ -74,6 +74,26 @@
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
+        .media-card {
+            cursor: zoom-in;
+        }
+
+        #mediaModal.active {
+            display: flex;
+            animation: fadeIn 0.3s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        #modalContent img, #modalContent video {
+            max-width: 100%;
+            max-height: 85vh;
+            border-radius: 4px;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+        }
     </style>
 </head>
 <body class="selection:bg-white/10 antialiased">
@@ -174,6 +194,56 @@
     <footer class="py-12 text-center text-slate-800 text-[8px] tracking-[1em] uppercase font-bold">
         © 2026 // SONRISA WATTS // ALL RIGHTS RESERVED
     </footer>
+    <div id="mediaModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-black/95 backdrop-blur-xl cursor-zoom-out">
+        <div class="relative max-w-[90vw] max-h-[90vh] flex items-center justify-center">
+            <button id="closeModal" class="absolute -top-12 right-0 text-white/50 hover:text-white text-xs tracking-widest uppercase font-bold">Close // [×]</button>
+            <div id="modalContent" class="w-full h-full flex items-center justify-center"></div>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('mediaModal');
+        const modalContent = document.getElementById('modalContent');
+        const closeModal = document.getElementById('closeModal');
+        const cards = document.querySelectorAll('.media-card');
+
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                const media = card.querySelector('img, video');
+                modalContent.innerHTML = ''; 
+
+                if (media.tagName === 'IMG') {
+                    const newImg = document.createElement('img');
+                    newImg.src = media.src;
+                    modalContent.appendChild(newImg);
+                } else if (media.tagName === 'VIDEO') {
+                    const newVideo = document.createElement('video');
+                    newVideo.src = media.src;
+                    newVideo.controls = true;
+                    newVideo.autoplay = true;
+                    newVideo.loop = true;
+                    modalContent.appendChild(newVideo);
+                }
+
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden'; 
+            });
+        });
+
+        const handleClose = () => {
+            modal.classList.remove('active');
+            modalContent.innerHTML = '';
+            document.body.style.overflow = 'auto';
+        };
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal || e.target === closeModal) handleClose();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') handleClose();
+        });
+    </script>
 
 </body>
 </html>
