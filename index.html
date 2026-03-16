@@ -17,7 +17,6 @@
             overflow-x: hidden;
         }
 
-        /* 1. Scroll Progress Bar */
         #progress-bar {
             position: fixed;
             top: 0;
@@ -28,7 +27,6 @@
             z-index: 10001;
         }
 
-        /* 2. Custom Cursor */
         #custom-cursor {
             width: 12px;
             height: 12px;
@@ -43,41 +41,52 @@
         }
         @media (min-width: 1024px) { #custom-cursor { display: block; } }
 
-        /* 3. Reveal Animation */
         .reveal {
             opacity: 0;
-            transform: translateY(40px);
-            transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
         }
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* Editorial Rhythm Grid */
+        /* Fixed Grid Logic: Prevents random gaps */
         .archive-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            grid-auto-flow: dense;
-            gap: 1.5rem;
+            gap: 1rem;
+            grid-auto-rows: 250px; /* Base height for consistency */
         }
         
-        @media (min-width: 768px) { .archive-grid { grid-template-columns: repeat(3, 1fr); gap: 3rem; } }
-        @media (min-width: 1024px) { .archive-grid { grid-template-columns: repeat(4, 1fr); gap: 4rem; } }
+        @media (min-width: 768px) { 
+            .archive-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; grid-auto-rows: 300px; } 
+        }
+        @media (min-width: 1024px) { 
+            .archive-grid { grid-template-columns: repeat(4, 1fr); gap: 2rem; grid-auto-rows: 350px; } 
+        }
 
         .media-card {
             position: relative;
             overflow: hidden;
-            cursor: none; /* Hide default for custom cursor */
-            transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+            cursor: none;
+            background: #0a0a0a; /* Subtle filler while loading */
         }
 
+        /* Forces all media to fill the space without stretching */
         .media-card img, .media-card video {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover; 
             display: block;
+            transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
         }
 
+        .media-card:hover img, .media-card:hover video {
+            transform: scale(1.05);
+        }
+
+        /* Sizing Variations */
         .span-2 { grid-column: span 2; }
         .row-2 { grid-row: span 2; }
 
@@ -90,26 +99,20 @@
             padding: 2rem;
             transition: all 0.4s ease;
         }
-
-        .nav-link:hover {
-            color: #fff;
-            letter-spacing: 1em;
-        }
+        .nav-link:hover { color: #fff; letter-spacing: 1em; }
 
         #zoomModal {
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.99);
+            background: #000;
             z-index: 10000;
-            padding: 2rem;
             justify-content: center;
             align-items: center;
         }
-
         #zoomModal img, #zoomModal video {
-            max-width: 100%;
-            max-height: 95vh;
+            max-width: 90%;
+            max-height: 90vh;
             object-fit: contain;
         }
     </style>
@@ -120,23 +123,16 @@
     <div id="custom-cursor"></div>
 
     <header class="pt-40 pb-32 px-6 text-center reveal">
-        <h1 class="text-3xl md:text-6xl font-black tracking-[0.2em] uppercase">
-            SONRISA WATTS
-        </h1>
-        <div class="h-px w-12 bg-zinc-800 mx-auto mt-8"></div>
+        <h1 class="text-3xl md:text-6xl font-black tracking-[0.2em] uppercase">SONRISA WATTS</h1>
         <p class="text-[9px] tracking-[1.5em] text-zinc-600 uppercase mt-8">Independent Research / Archive 01</p>
     </header>
 
-    <main class="max-w-[1700px] mx-auto px-8 pb-60">
-        
+    <main class="max-w-[1800px] mx-auto px-6 pb-60">
         <div class="archive-grid">
             
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts52.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts.jpg"></div>
-            
-            <div class="media-card span-2 reveal" onclick="openZoom(this)">
-                <img src="images/2025-12-03-11-46-59-873.jpg">
-            </div>
+            <div class="media-card span-2 reveal" onclick="openZoom(this)"><img src="images/2025-12-03-11-46-59-873.jpg"></div>
 
             <div class="media-card row-2 reveal" onclick="openZoom(this)"><video src="images/sonrisawatts.mp4" autoplay loop muted playsinline></video></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts50.jpg"></div>
@@ -152,17 +148,16 @@
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/IMG-20251018-WA0041.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts20.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/risapalm.jpg"></div>
+
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-03-12-39-34-840.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-04-22-56-815.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-02-48-56-974.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts53.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/update.jpg"></div>
 
+            <div class="media-card span-2 reveal" onclick="openZoom(this)"><img src="images/update.jpg"></div>
             <div class="media-card span-2 reveal" onclick="openZoom(this)">
                 <video src="images/sonrisawatts11.mp4" autoplay loop muted playsinline></video>
-                <div class="absolute bottom-6 left-6">
-                    <p class="text-[8px] tracking-[0.6em] uppercase text-white opacity-40 italic">"I never know what to do with my hair"</p>
-                </div>
+                <div class="absolute bottom-6 left-6"><p class="text-[8px] tracking-[0.6em] uppercase text-white opacity-40 italic">"I never know what to do with my hair"</p></div>
             </div>
 
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts78.jpg"></div>
@@ -174,9 +169,7 @@
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts75.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts21.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts22.jpg"></div>
-            
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts56.jpg"></div>
-            
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts00.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts9.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts94.jpg"></div>
@@ -208,7 +201,6 @@
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/update2.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/495383937_23874224295534835_237346029115264525_n.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts24.jpg"></div>
-
         </div>
 
         <nav class="mt-60 flex justify-center gap-12 reveal">
@@ -216,7 +208,6 @@
             <a href="Methodsanddata.html" class="nav-link">Methods</a>
             <a href="contact.html" class="nav-link">Contact</a>
         </nav>
-
     </main>
 
     <div id="zoomModal" onclick="this.style.display='none'">
@@ -224,7 +215,7 @@
     </div>
 
     <script>
-        // 1. Progress Bar Logic
+        // Progress Bar
         window.onscroll = function() {
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -232,14 +223,14 @@
             document.getElementById("progress-bar").style.width = scrolled + "%";
         };
 
-        // 2. Custom Cursor Movement
+        // Custom Cursor
         const cursor = document.getElementById('custom-cursor');
         document.addEventListener('mousemove', e => {
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
         });
 
-        // 3. Cursor Scaling on Hover
+        // Hover Effect
         document.querySelectorAll('.media-card, .nav-link').forEach(item => {
             item.addEventListener('mouseenter', () => { 
                 cursor.style.transform = 'scale(6)'; 
@@ -251,18 +242,15 @@
             });
         });
 
-        // 4. Scroll Reveal (Intersection Observer)
+        // Scroll Reveal
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('active');
             });
         }, { threshold: 0.1 });
-
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // 5. Modal Logic
+        // Modal
         function openZoom(el) {
             const modal = document.getElementById('zoomModal');
             const content = document.getElementById('modalContent');
@@ -274,6 +262,5 @@
             modal.style.display = 'flex';
         }
     </script>
-
 </body>
 </html>
