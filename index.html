@@ -10,104 +10,96 @@
     <style>
         body { 
             font-family: 'Inter', sans-serif; 
-            background-color: #000000; /* True black for luxury feel */
+            background-color: #050505; 
             color: #ffffff; 
             overflow-x: hidden;
         }
 
-        .editorial-grid {
+        /* Strict Sequential Grid - Fixes image 56 jumping */
+        .archive-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            /* This line fixes the order issue - no "packing" allowed */
             grid-auto-flow: row; 
-            gap: 1.5rem;
+            gap: 2rem;
             width: 100%;
         }
         
-        @media (min-width: 768px) { .editorial-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; } }
-        @media (min-width: 1024px) { .editorial-grid { grid-template-columns: repeat(4, 1fr); } }
+        @media (min-width: 768px) { .archive-grid { grid-template-columns: repeat(3, 1fr); gap: 3rem; } }
+        @media (min-width: 1024px) { .archive-grid { grid-template-columns: repeat(4, 1fr); } }
 
         .media-card {
             position: relative;
-            background: #0a0a0a;
-            overflow: hidden;
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
             opacity: 0;
-            transform: translateY(30px);
-            animation: reveal 0.8s ease forwards;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s ease forwards;
         }
 
-        @keyframes reveal {
+        @keyframes fadeIn {
             to { opacity: 1; transform: translateY(0); }
         }
 
         .media-card img, .media-card video {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            max-height: 80vh;
+            object-fit: contain; /* NO CROPPING: Shows the full original file */
             display: block;
-            filter: grayscale(20%); /* Subtle editorial desaturation */
-            transition: all 0.9s ease;
+            /* NO FILTERS: Colors remain 100% original */
         }
 
-        .media-card:hover img, .media-card:hover video {
-            transform: scale(1.05);
-            filter: grayscale(0%);
+        .media-card:hover {
+            transform: scale(1.02);
         }
 
-        /* The "Expensive" Border Effect */
-        .media-card::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border: 1px solid rgba(255,255,255,0.05);
-            pointer-events: none;
-        }
-
+        /* Standout styling for the 873 photo */
         .featured {
             grid-column: span 2;
-            grid-row: span 2;
         }
 
         .glass-nav {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
         }
 
         .glass-nav:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(255, 255, 255, 0.15);
         }
 
-        .text-kern {
-            letter-spacing: 0.5em;
+        .luxury-label {
+            letter-spacing: 0.6em;
             text-transform: uppercase;
-            font-size: 10px;
-            color: #666;
+            font-size: 9px;
+            color: #444;
+            margin-top: 2rem;
         }
     </style>
 </head>
 <body class="antialiased">
 
-    <header class="pt-24 pb-16 px-6 text-center">
-        <h1 class="text-5xl md:text-8xl font-black tracking-tighter mb-4">
+    <header class="pt-24 pb-20 px-6 text-center">
+        <h1 class="text-4xl md:text-7xl font-black tracking-tighter mb-4">
             SONRISA WATTS
         </h1>
-        <p class="text-kern">St. Kitts & Nevis — 17.3° N, 62.7° W</p>
+        <p class="luxury-label">Archive Index / St. Kitts & Nevis</p>
     </header>
 
-    <main class="max-w-[1400px] mx-auto px-6 pb-32">
+    <main class="max-w-[1500px] mx-auto px-8 pb-40">
         
-        <div class="editorial-grid">
+        <div class="archive-grid">
             
             <div class="media-card"><img src="images/sonrisawatts52.jpg" alt="Sonrisa"></div>
             <div class="media-card"><img src="images/sonrisawatts.jpg" alt="Sonrisa"></div>
             
             <div class="media-card featured">
                 <img src="images/2025-12-03-11-46-59-873.jpg" alt="Featured">
-                <div class="absolute bottom-6 left-6 text-[10px] tracking-[0.3em] uppercase opacity-50">Volume I / 873</div>
             </div>
 
             <div class="media-card"><video src="images/sonrisawatts.mp4" autoplay loop muted playsinline></video></div>
@@ -121,10 +113,10 @@
             <div class="media-card"><img src="images/sonrisawatts53.jpg" alt="Sonrisa"></div>
             <div class="media-card"><img src="images/update.jpg" alt="Update"></div>
 
-            <div class="media-card bg-[#050505]">
+            <div class="media-card">
                 <video src="images/sonrisawatts11.mp4" autoplay loop muted playsinline></video>
-                <div class="p-6">
-                    <p class="text-[10px] tracking-widest uppercase text-orange-400/60 italic leading-relaxed">
+                <div class="mt-6 border-t border-white/10 pt-4 w-full">
+                    <p class="text-[9px] tracking-[0.3em] uppercase text-orange-400/50 italic text-center">
                         "I never know what to do with my hair"
                     </p>
                 </div>
@@ -183,22 +175,22 @@
 
         </div>
 
-        <nav class="mt-32 flex flex-wrap justify-center gap-6">
-            <a href="about.html" class="glass-nav px-12 py-5 text-[10px] font-bold tracking-[0.5em] uppercase text-white/40 hover:text-white transition-all">Bio</a>
-            <a href="Methodsanddata.html" class="glass-nav px-12 py-5 text-[10px] font-bold tracking-[0.5em] uppercase text-white/40 hover:text-white transition-all">Methods</a>
-            <a href="contact.html" class="glass-nav px-12 py-5 text-[10px] font-bold tracking-[0.5em] uppercase text-white/40 hover:text-white transition-all">Contact</a>
+        <nav class="mt-40 flex flex-wrap justify-center gap-8">
+            <a href="about.html" class="glass-nav px-14 py-6 text-[10px] font-bold tracking-[0.5em] uppercase text-white/40 hover:text-white transition-all">Bio</a>
+            <a href="Methodsanddata.html" class="glass-nav px-14 py-6 text-[10px] font-bold tracking-[0.5em] uppercase text-white/40 hover:text-white transition-all">Methods</a>
+            <a href="contact.html" class="glass-nav px-14 py-6 text-[10px] font-bold tracking-[0.5em] uppercase text-white/40 hover:text-white transition-all">Contact</a>
         </nav>
 
     </main>
 
-    <footer class="py-20 text-center opacity-20 text-[9px] tracking-[1.2em] uppercase font-bold">
-        © 2026 / SW ARCHIVE / ALL RIGHTS RESERVED
+    <footer class="py-24 text-center opacity-10 text-[10px] tracking-[1.5em] uppercase font-black">
+        © 2026 // SONRISA WATTS ARCHIVE
     </footer>
 
-    <div id="mediaModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-black/98 backdrop-blur-2xl cursor-zoom-out">
-        <div class="relative max-w-[85vw] max-h-[85vh]">
-            <button id="closeModal" class="absolute -top-16 right-0 text-white/30 hover:text-white text-[10px] tracking-widest uppercase font-bold transition-colors">[ Close ]</button>
-            <div id="modalContent" class="w-full h-full flex items-center justify-center"></div>
+    <div id="mediaModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-black/98 backdrop-blur-3xl cursor-zoom-out">
+        <div class="relative max-w-[95vw] max-h-[95vh] flex items-center justify-center">
+            <button id="closeModal" class="absolute -top-20 right-0 text-white/20 hover:text-white text-[10px] tracking-[0.5em] uppercase font-bold transition-all">[ ESC / CLOSE ]</button>
+            <div id="modalContent" class="w-full h-full"></div>
         </div>
     </div>
 
@@ -215,6 +207,9 @@
                 modalContent.innerHTML = ''; 
 
                 const cloned = media.cloneNode(true);
+                // Resetting style for modal to ensure original aspect ratio
+                cloned.style.maxHeight = '90vh';
+                cloned.style.width = 'auto';
                 if (cloned.tagName === 'VIDEO') {
                     cloned.controls = true;
                     cloned.autoplay = true;
