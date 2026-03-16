@@ -51,12 +51,11 @@
             transform: translateY(0);
         }
 
-        /* Fixed Grid Logic: Prevents random gaps */
         .archive-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
-            grid-auto-rows: 250px; /* Base height for consistency */
+            grid-auto-rows: 250px;
         }
         
         @media (min-width: 768px) { 
@@ -70,10 +69,9 @@
             position: relative;
             overflow: hidden;
             cursor: none;
-            background: #0a0a0a; /* Subtle filler while loading */
+            background: #0a0a0a;
         }
 
-        /* Forces all media to fill the space without stretching */
         .media-card img, .media-card video {
             width: 100%;
             height: 100%;
@@ -86,7 +84,6 @@
             transform: scale(1.05);
         }
 
-        /* Sizing Variations */
         .span-2 { grid-column: span 2; }
         .row-2 { grid-row: span 2; }
 
@@ -130,35 +127,30 @@
     <main class="max-w-[1800px] mx-auto px-6 pb-60">
         <div class="archive-grid">
             
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/update.jpg"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-04-22-56-815.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts52.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts.jpg"></div>
-            <div class="media-card span-2 reveal" onclick="openZoom(this)"><img src="images/2025-12-03-11-46-59-873.jpg"></div>
 
+            <div class="media-card span-2 reveal" onclick="openZoom(this)"><img src="images/2025-12-03-11-46-59-873.jpg"></div>
             <div class="media-card row-2 reveal" onclick="openZoom(this)"><video src="images/sonrisawatts.mp4" autoplay loop muted playsinline></video></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts50.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><video src="images/sonrisawatts.mp4" autoplay loop muted playsinline></video></div>
+
             <div class="media-card reveal" onclick="openZoom(this)"><video src="images/sonrisawatts10.mp4" autoplay loop muted playsinline></video></div>
-            
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawattshair.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><video src="images/risapalm2.mp4" autoplay loop muted playsinline></video></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><video src="images/risapalm3.mp4" autoplay loop muted playsinline></video></div>
-            <div class="media-card span-2 reveal" onclick="openZoom(this)"><img src="images/sonriswatts (3).jpg"></div>
             
+            <div class="media-card reveal" onclick="openZoom(this)"><video src="images/sonrisawatts11.mp4" autoplay loop muted playsinline></video></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonriswatts (3).jpg"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><video src="images/risapalm3.mp4" autoplay loop muted playsinline></video></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-09-57-05-769.jpg"></div>
+            
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/IMG-20251018-WA0041.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts20.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/risapalm.jpg"></div>
-
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-03-12-39-34-840.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-04-22-56-815.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-02-48-56-974.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts53.jpg"></div>
-
-            <div class="media-card span-2 reveal" onclick="openZoom(this)"><img src="images/update.jpg"></div>
-            <div class="media-card span-2 reveal" onclick="openZoom(this)">
-                <video src="images/sonrisawatts11.mp4" autoplay loop muted playsinline></video>
-                <div class="absolute bottom-6 left-6"><p class="text-[8px] tracking-[0.6em] uppercase text-white opacity-40 italic">"I never know what to do with my hair"</p></div>
-            </div>
 
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts78.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts51.jpg"></div>
@@ -215,7 +207,6 @@
     </div>
 
     <script>
-        // Progress Bar
         window.onscroll = function() {
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -223,14 +214,12 @@
             document.getElementById("progress-bar").style.width = scrolled + "%";
         };
 
-        // Custom Cursor
         const cursor = document.getElementById('custom-cursor');
         document.addEventListener('mousemove', e => {
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
         });
 
-        // Hover Effect
         document.querySelectorAll('.media-card, .nav-link').forEach(item => {
             item.addEventListener('mouseenter', () => { 
                 cursor.style.transform = 'scale(6)'; 
@@ -242,7 +231,6 @@
             });
         });
 
-        // Scroll Reveal
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) entry.target.classList.add('active');
@@ -250,7 +238,6 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // Modal
         function openZoom(el) {
             const modal = document.getElementById('zoomModal');
             const content = document.getElementById('modalContent');
