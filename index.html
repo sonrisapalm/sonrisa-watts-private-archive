@@ -54,34 +54,24 @@
         .archive-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            grid-auto-rows: 250px;
+            gap: 1.5rem;
+            grid-auto-flow: dense;
         }
         
-        @media (min-width: 768px) { 
-            .archive-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; grid-auto-rows: 300px; } 
-        }
-        @media (min-width: 1024px) { 
-            .archive-grid { grid-template-columns: repeat(4, 1fr); gap: 2rem; grid-auto-rows: 350px; } 
-        }
+        @media (min-width: 768px) { .archive-grid { grid-template-columns: repeat(3, 1fr); gap: 3rem; } }
+        @media (min-width: 1024px) { .archive-grid { grid-template-columns: repeat(4, 1fr); gap: 4rem; } }
 
         .media-card {
             position: relative;
             overflow: hidden;
             cursor: none;
-            background: #0a0a0a;
+            transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
         }
 
         .media-card img, .media-card video {
             width: 100%;
-            height: 100%;
-            object-fit: cover; 
+            height: auto;
             display: block;
-            transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
-        }
-
-        .media-card:hover img, .media-card:hover video {
-            transform: scale(1.05);
         }
 
         .span-2 { grid-column: span 2; }
@@ -96,20 +86,21 @@
             padding: 2rem;
             transition: all 0.4s ease;
         }
-        .nav-link:hover { color: #fff; letter-spacing: 1em; }
+        .nav-link:hover { color: #fff; }
 
         #zoomModal {
             display: none;
             position: fixed;
             inset: 0;
-            background: #000;
+            background: rgba(0,0,0,0.99);
             z-index: 10000;
+            padding: 2rem;
             justify-content: center;
             align-items: center;
         }
         #zoomModal img, #zoomModal video {
-            max-width: 90%;
-            max-height: 90vh;
+            max-width: 100%;
+            max-height: 95vh;
             object-fit: contain;
         }
     </style>
@@ -121,36 +112,42 @@
 
     <header class="pt-40 pb-32 px-6 text-center reveal">
         <h1 class="text-3xl md:text-6xl font-black tracking-[0.2em] uppercase">SONRISA WATTS</h1>
-        <p class="text-[9px] tracking-[1.5em] text-zinc-600 uppercase mt-8">Independent Research / Archive 01</p>
+        <div class="h-px w-12 bg-zinc-800 mx-auto mt-8"></div>
+        <p class="text-[9px] tracking-[1.5em] text-zinc-600 uppercase mt-8">Private Archive / Blog 01</p>
     </header>
 
-    <main class="max-w-[1800px] mx-auto px-6 pb-60">
+    <main class="max-w-[1700px] mx-auto px-8 pb-60">
         <div class="archive-grid">
             
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/update.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-04-22-56-815.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts52.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts.jpg"></div>
-
             <div class="media-card span-2 reveal" onclick="openZoom(this)"><img src="images/2025-12-03-11-46-59-873.jpg"></div>
+
             <div class="media-card row-2 reveal" onclick="openZoom(this)"><video src="images/sonrisawatts.mp4" autoplay loop muted playsinline></video></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/update.jpg"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-04-22-56-815.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts50.jpg"></div>
 
             <div class="media-card reveal" onclick="openZoom(this)"><video src="images/sonrisawatts10.mp4" autoplay loop muted playsinline></video></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawattshair.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><video src="images/risapalm2.mp4" autoplay loop muted playsinline></video></div>
-            
-            <div class="media-card reveal" onclick="openZoom(this)"><video src="images/sonrisawatts11.mp4" autoplay loop muted playsinline></video></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonriswatts (3).jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><video src="images/risapalm3.mp4" autoplay loop muted playsinline></video></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-09-57-05-769.jpg"></div>
             
+            <div class="media-card span-2 reveal" onclick="openZoom(this)"><img src="images/sonriswatts (3).jpg"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-09-57-05-769.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/IMG-20251018-WA0041.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts20.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/risapalm.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-03-12-39-34-840.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-02-48-56-974.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts53.jpg"></div>
+
+            <div class="media-card span-2 reveal" onclick="openZoom(this)">
+                <video src="images/sonrisawatts11.mp4" autoplay loop muted playsinline></video>
+                <div class="absolute bottom-6 left-6">
+                    <p class="text-[8px] tracking-[0.6em] uppercase text-white opacity-40 italic">"I never know what to do with my hair"</p>
+                </div>
+            </div>
 
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts78.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts51.jpg"></div>
