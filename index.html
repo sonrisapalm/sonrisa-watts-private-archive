@@ -10,88 +10,74 @@
     <style>
         body { 
             font-family: 'Inter', sans-serif; 
-            background-color: #050505; 
+            background-color: #0a0a0a; /* Neutral deep dark, no tint */
             color: #ffffff; 
-            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
         }
 
-        /* Strict Sequential Grid - Fixes image 56 jumping */
+        /* 56 FIX: row flow ensures images stay in the exact order of the HTML */
         .archive-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             grid-auto-flow: row; 
-            gap: 2rem;
+            gap: 1.5rem;
             width: 100%;
         }
         
-        @media (min-width: 768px) { .archive-grid { grid-template-columns: repeat(3, 1fr); gap: 3rem; } }
+        @media (min-width: 768px) { .archive-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; } }
         @media (min-width: 1024px) { .archive-grid { grid-template-columns: repeat(4, 1fr); } }
 
         .media-card {
             position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeIn 0.8s ease forwards;
-        }
-
-        @keyframes fadeIn {
-            to { opacity: 1; transform: translateY(0); }
+            width: 100%;
+            overflow: hidden;
+            display: block;
         }
 
         .media-card img, .media-card video {
             width: 100%;
             height: auto;
-            max-height: 80vh;
-            object-fit: contain; /* NO CROPPING: Shows the full original file */
             display: block;
-            /* NO FILTERS: Colors remain 100% original */
+            /* REMOVED ALL FILTERS, OPACITY, AND GRAYSCALE */
+            filter: none !important;
+            mix-blend-mode: normal !important;
+            image-rendering: auto;
         }
 
-        .media-card:hover {
-            transform: scale(1.02);
-        }
-
-        /* Standout styling for the 873 photo */
+        /* Large Featured Image (873) - No cropping */
         .featured {
             grid-column: span 2;
         }
 
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.4s ease;
-        }
-
-        .glass-nav:hover {
-            background: rgba(255, 255, 255, 0.07);
-            border-color: rgba(255, 255, 255, 0.15);
-        }
-
-        .luxury-label {
-            letter-spacing: 0.6em;
+        .nav-link {
+            letter-spacing: 0.4em;
             text-transform: uppercase;
-            font-size: 9px;
-            color: #444;
-            margin-top: 2rem;
+            font-size: 11px;
+            font-weight: 700;
+            color: #888;
+            padding: 1rem 2rem;
+            border: 1px solid #222;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #fff;
+            border-color: #444;
+            background: #111;
         }
     </style>
 </head>
-<body class="antialiased">
+<body>
 
-    <header class="pt-24 pb-20 px-6 text-center">
-        <h1 class="text-4xl md:text-7xl font-black tracking-tighter mb-4">
+    <header class="py-20 px-6 text-center">
+        <h1 class="text-5xl md:text-8xl font-black tracking-tighter uppercase">
             SONRISA WATTS
         </h1>
-        <p class="luxury-label">Archive Index / St. Kitts & Nevis</p>
+        <p class="text-[10px] tracking-[1em] text-zinc-500 uppercase mt-4">Archive Index / St. Kitts & Nevis</p>
     </header>
 
-    <main class="max-w-[1500px] mx-auto px-8 pb-40">
+    <main class="max-w-[1600px] mx-auto px-6 pb-40">
         
         <div class="archive-grid">
             
@@ -115,11 +101,7 @@
 
             <div class="media-card">
                 <video src="images/sonrisawatts11.mp4" autoplay loop muted playsinline></video>
-                <div class="mt-6 border-t border-white/10 pt-4 w-full">
-                    <p class="text-[9px] tracking-[0.3em] uppercase text-orange-400/50 italic text-center">
-                        "I never know what to do with my hair"
-                    </p>
-                </div>
+                <p class="text-[9px] tracking-widest uppercase text-zinc-600 italic text-center mt-4">"I never know what to do with my hair"</p>
             </div>
 
             <div class="media-card"><img src="images/sonrisawatts78.jpg" alt="Sonrisa"></div>
@@ -175,65 +157,17 @@
 
         </div>
 
-        <nav class="mt-40 flex flex-wrap justify-center gap-8">
-            <a href="about.html" class="glass-nav px-14 py-6 text-[10px] font-bold tracking-[0.5em] uppercase text-white/40 hover:text-white transition-all">Bio</a>
-            <a href="Methodsanddata.html" class="glass-nav px-14 py-6 text-[10px] font-bold tracking-[0.5em] uppercase text-white/40 hover:text-white transition-all">Methods</a>
-            <a href="contact.html" class="glass-nav px-14 py-6 text-[10px] font-bold tracking-[0.5em] uppercase text-white/40 hover:text-white transition-all">Contact</a>
+        <nav class="mt-40 flex flex-wrap justify-center gap-10">
+            <a href="about.html" class="nav-link">Bio</a>
+            <a href="Methodsanddata.html" class="nav-link">Methods</a>
+            <a href="contact.html" class="nav-link">Contact</a>
         </nav>
 
     </main>
 
-    <footer class="py-24 text-center opacity-10 text-[10px] tracking-[1.5em] uppercase font-black">
-        © 2026 // SONRISA WATTS ARCHIVE
+    <footer class="py-20 text-center opacity-30 text-[9px] tracking-[1.5em] font-bold">
+        © 2026 // SW ARCHIVE
     </footer>
 
-    <div id="mediaModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-black/98 backdrop-blur-3xl cursor-zoom-out">
-        <div class="relative max-w-[95vw] max-h-[95vh] flex items-center justify-center">
-            <button id="closeModal" class="absolute -top-20 right-0 text-white/20 hover:text-white text-[10px] tracking-[0.5em] uppercase font-bold transition-all">[ ESC / CLOSE ]</button>
-            <div id="modalContent" class="w-full h-full"></div>
-        </div>
-    </div>
-
-    <script>
-        const modal = document.getElementById('mediaModal');
-        const modalContent = document.getElementById('modalContent');
-        const closeModal = document.getElementById('closeModal');
-        const cards = document.querySelectorAll('.media-card');
-
-        cards.forEach(card => {
-            card.addEventListener('click', () => {
-                const media = card.querySelector('img, video');
-                if(!media) return;
-                modalContent.innerHTML = ''; 
-
-                const cloned = media.cloneNode(true);
-                // Resetting style for modal to ensure original aspect ratio
-                cloned.style.maxHeight = '90vh';
-                cloned.style.width = 'auto';
-                if (cloned.tagName === 'VIDEO') {
-                    cloned.controls = true;
-                    cloned.autoplay = true;
-                }
-                modalContent.appendChild(cloned);
-                modal.classList.add('active');
-                modal.style.display = 'flex';
-                document.body.style.overflow = 'hidden'; 
-            });
-        });
-
-        const handleClose = () => {
-            modal.style.display = 'none';
-            modalContent.innerHTML = '';
-            document.body.style.overflow = 'auto';
-        };
-
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal || e.target === closeModal) handleClose();
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') handleClose();
-        });
-    </script>
 </body>
 </html>
