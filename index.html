@@ -131,65 +131,49 @@
         /* --- THE ORIGINAL EXPENSIVE ARCHIVE LOOK --- */
 .video-feature-box {
     grid-column: span 2;
-    background: rgba(255, 255, 255, 0.03); /* Subtle glass tint */
+    background: rgba(255, 255, 255, 0.02);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 40px;
-    padding: 35px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
-    gap: 25px;
-    overflow: hidden; /* Keeps everything inside the rounded box */
-}
-
-.feature-label {
-    text-[10px] tracking-[0.5em] text-zinc-500 uppercase;
-    font-size: 10px;
-    letter-spacing: 0.5em;
-    color: #71717a;
+    gap: 20px;
 }
 
 .video-scroll-container {
     display: flex;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    gap: 20px;
-    padding-bottom: 15px;
-    width: 100%;
-    cursor: grab;
-    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    gap: 15px;
+    padding-bottom: 10px;
+    scrollbar-width: none; /* Hide scrollbar Firefox */
 }
 
-/* Custom Minimalist Scrollbar */
-.video-scroll-container::-webkit-scrollbar {
-    height: 3px;
-}
-.video-scroll-container::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+.video-scroll-container::-webkit-scrollbar { 
+    display: none; /* Hide scrollbar Chrome/Safari */
 }
 
-/* The Individual TikTok/Video Cards */
 .mini-video-card {
-    flex: 0 0 280px !important; /* This forces the horizontal look */
-    height: 400px; /* Original TikTok-style height */
-    border-radius: 25px;
-    overflow: hidden;
+    min-width: 140px; /* This is the magic number */
+    aspect-ratio: 9/16; /* This forces the TikTok shape */
     background: #000;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.4s ease;
 }
 
 .mini-video-card:hover {
-    transform: scale(1.02);
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 .mini-video-card video {
     width: 100%;
     height: 100%;
-    object-fit: cover !important;
+    object-fit: cover;
 }
     </style>
 </head>
