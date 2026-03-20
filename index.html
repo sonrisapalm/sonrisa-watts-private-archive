@@ -142,46 +142,59 @@
         }
 
         .video-scroll-container {
-            display: flex;
-            overflow-x: auto;
-            gap: 15px;
-            padding-bottom: 10px;
-            scrollbar-width: none;
-            cursor: grab;
-        }
-        .video-scroll-container:active { cursor: grabbing; }
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding-bottom: 20px;
+    /* Forces the scrollbar to be visible */
+    scrollbar-width: auto; 
+    scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.05);
+}
 
-        .video-scroll-container::-webkit-scrollbar { display: none; }
+/* 1. Show the Scrollbar Area */
+.video-scroll-container::-webkit-scrollbar {
+    height: 12px; /* A bit thicker so the arrows are easy to click */
+    display: block !important;
+}
 
-        .mini-video-card {
-            min-width: 140px;
-            aspect-ratio: 9/16;
-            background: #000;
-            border-radius: 20px;
-            overflow: hidden;
-            cursor: pointer;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.4s ease;
-        }
+/* 2. Style the "Track" (the background of the bar) */
+.video-scroll-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
 
-        .mini-video-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 255, 255, 0.4);
-        }
+/* 3. Style the "Thumb" (the part you drag) */
+.video-scroll-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
 
-        .mini-video-card video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+/* 4. BRING BACK THE ARROWS (The Buttons) */
+.video-scroll-container::-webkit-scrollbar-button:single-button {
+    background-color: rgba(255, 255, 255, 0.1);
+    display: block;
+    border-style: solid;
+    height: 12px;
+    width: 16px;
+}
 
-        .feature-label {
-            font-size: 9px;
-            letter-spacing: 0.6em;
-            text-transform: uppercase;
-            color: #555;
-            margin-left: 5px;
-        }
+/* Left Arrow Icon */
+.video-scroll-container::-webkit-scrollbar-button:single-button:horizontal:decrement {
+    border-width: 6px 8px 6px 0;
+    border-color: transparent #fff transparent transparent;
+}
+
+/* Right Arrow Icon */
+.video-scroll-container::-webkit-scrollbar-button:single-button:horizontal:increment {
+    border-width: 6px 0 6px 8px;
+    border-color: transparent transparent transparent #fff;
+}
+
+.video-scroll-container::-webkit-scrollbar-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
     </style>
 </head>
 <body>
