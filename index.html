@@ -141,59 +141,40 @@
             gap: 20px;
         }
 
-        .video-scroll-container {
+/* THE CLEAN ARCHIVE LOOK */
+.video-scroll-container {
     display: flex;
     overflow-x: auto;
-    gap: 15px;
-    padding-bottom: 20px;
-    /* Forces the scrollbar to be visible */
-    scrollbar-width: auto; 
-    scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.05);
+    gap: 20px;
+    padding: 10px 0 20px 0;
+    /* This makes sure the container doesn't shrink the videos */
+    width: 100%;
+    /* Standard scrollbar for Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
 }
 
-/* 1. Show the Scrollbar Area */
+/* Hide the ugly default scrollbar but keep it functional */
 .video-scroll-container::-webkit-scrollbar {
-    height: 12px; /* A bit thicker so the arrows are easy to click */
-    display: block !important;
+    height: 6px; /* Super thin and elegant */
 }
 
-/* 2. Style the "Track" (the background of the bar) */
 .video-scroll-container::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
+    background: transparent;
 }
 
-/* 3. Style the "Thumb" (the part you drag) */
 .video-scroll-container::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
-    border: 2px solid transparent;
-    background-clip: content-box;
 }
 
-/* 4. BRING BACK THE ARROWS (The Buttons) */
-.video-scroll-container::-webkit-scrollbar-button:single-button {
-    background-color: rgba(255, 255, 255, 0.1);
-    display: block;
-    border-style: solid;
-    height: 12px;
-    width: 16px;
-}
-
-/* Left Arrow Icon */
-.video-scroll-container::-webkit-scrollbar-button:single-button:horizontal:decrement {
-    border-width: 6px 8px 6px 0;
-    border-color: transparent #fff transparent transparent;
-}
-
-/* Right Arrow Icon */
-.video-scroll-container::-webkit-scrollbar-button:single-button:horizontal:increment {
-    border-width: 6px 0 6px 8px;
-    border-color: transparent transparent transparent #fff;
-}
-
-.video-scroll-container::-webkit-scrollbar-button:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+/* Ensure the video cards inside don't get squashed */
+.video-card {
+    flex: 0 0 300px; /* This forces them to stay 300px wide */
+    height: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #111;
 }
     </style>
 </head>
