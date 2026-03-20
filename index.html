@@ -183,7 +183,7 @@
     </style>
 </head>
 <body>
-    <canvas id="galaxy-bg"></canvas>
+    <div id="galaxy-bg"></div>
 
     <div id="progress-bar"></div>
     <div id="custom-cursor"></div>
@@ -204,27 +204,36 @@
     <span class="feature-label">Live Snapshots</span>
     
     <div class="video-scroll-container">
+
+        <div class="mini-video-card" onclick="openZoom(this)">
+            <video src="images/VID-20260120-WA0027.mp4" muted loop autoplay playsinline></video>
+        </div>
+        
         <div class="mini-video-card" onclick="openZoom(this)">
             <video src="images/VID-20250614-WA0028.mp4" muted loop autoplay playsinline></video>
         </div>
+
+         <div class="mini-video-card" onclick="openZoom(this)">
+            <video src="images/VID-20260104-WA0024.mp4" muted loop autoplay playsinline></video>
+        </div>
+        
+
+        <div class="mini-video-card" onclick="openZoom(this)">
+            <video src="images/VID-20260131-WA0011.mp4" muted loop autoplay playsinline></video>
+        </div>
+        
         <div class="mini-video-card" onclick="openZoom(this)">
             <video src="images/VID-20250614-WA0030.mp4" muted loop autoplay playsinline></video>
         </div>
         <div class="mini-video-card" onclick="openZoom(this)">
             <video src="images/VID-20251024-WA0041.mp4" muted loop autoplay playsinline></video>
         </div>
-        <div class="mini-video-card" onclick="openZoom(this)">
-            <video src="images/VID-20260104-WA0024.mp4" muted loop autoplay playsinline></video>
-        </div>
-        <div class="mini-video-card" onclick="openZoom(this)">
-            <video src="images/VID-20260120-WA0027.mp4" muted loop autoplay playsinline></video>
-        </div>
+       
+    
         <div class="mini-video-card" onclick="openZoom(this)">
             <video src="images/VID-20260131-WA0009.mp4" muted loop autoplay playsinline></video>
         </div>
-        <div class="mini-video-card" onclick="openZoom(this)">
-            <video src="images/VID-20260131-WA0011.mp4" muted loop autoplay playsinline></video>
-        </div>
+        
     </div>
 </div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts50.jpg"></div>
@@ -402,27 +411,7 @@
             content.appendChild(media);
             modal.style.display = 'flex';
         }
-        const canvas = document.getElementById('galaxy-bg');
-const ctx = canvas.getContext('2d');
-
-let stars = [];
-const starCount = 300; // Slightly fewer for a cleaner, high-end look
-
-function initGalaxy() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    stars = [];
-    for (let i = 0; i < starCount; i++) {
-        stars.push({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            size: Math.random() * 1.2, // Tiny stars
-            opacity: Math.random(),
-            speed: Math.random() * 0.15 + 0.05 // Slow, elegant drift
-        });
-    }
-}
-
+        
 function drawGalaxy() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
