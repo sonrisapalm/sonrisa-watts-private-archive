@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <nav class="flex justify-center items-center space-x-8 py-12 reveal">
-    <span class="text-[9px] tracking-[0.4em] text-zinc-600 uppercase">Archive Index:</span>
+    <span class="text-[9px] tracking-[0.4em] text-zinc-600 uppercase">Archive Index:</span> 
     <div class="flex space-x-6">
         <a href="index.html" class="page-link active text-[10px] tracking-[0.3em] uppercase transition-colors hover:text-white text-white">01</a>
         <a href="page2.html" class="page-link text-[10px] tracking-[0.3em] uppercase text-zinc-500 transition-colors hover:text-white">02</a>
@@ -175,6 +175,18 @@
     height: 100%;
     object-fit: cover;
 }
+   .video-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth; /* Makes the laptop scroll feel high-end */
+    -ms-overflow-style: none;  /* Hides scrollbar IE/Edge */
+    scrollbar-width: none;     /* Hides scrollbar Firefox */
+}
+
+/* Hides scrollbar Chrome/Safari so it stays clean on laptops */
+.video-scroll-container::-webkit-scrollbar {
+    display: none;
+}
     </style>
 </head>
 <body>
@@ -230,6 +242,19 @@
                 </div>
             </div>
 
+
+<div class="video-feature-box reveal">
+                <span class="feature-label">Tryna take care of my hairs</span>
+                <div class="video-scroll-container">
+                    <div class="mini-video-card" onclick="openZoom(this)">
+                        <video src="images/sonrisawatts11.mp4" aria-label="Sonrisa Watts Video" muted loop autoplay playsinline></video>
+                    </div>
+                    <div class="mini-video-card" onclick="openZoom(this)">
+                        <img src="images/hair1.jpg" aria-label="Sonrisa Watts Video"> 
+                    </div>
+
+
+            
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts50.jpg" alt="Sonrisa Watts"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts20.jpg" alt="Sonrisa Watts"></div>
             <div class="media-card row-2 reveal" onclick="openZoom(this)"><video src="images/sonrisawatts.mp4" aria-label="Sonrisa Watts Video" autoplay loop muted playsinline></video></div>
@@ -294,6 +319,25 @@
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts7 (2).jpg" alt="Sonrisa Watts"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-03-11-04-432.jpg" alt="Sonrisa Watts"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-10-23_04-38-12.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)">
+    <img src="images/IMG_20260314_115739_884 (1).jpg" alt="Sonrisa Watts">
+</div>
+
+<div class="media-card reveal" onclick="openZoom(this)">
+    <img src="images/IMG-20251122-WA0001.jpg" alt="Sonrisa Watts">
+</div>
+
+<div class="media-card span-2 reveal" onclick="openZoom(this)">
+    <img src="images/IMG_20260314_115502_191 (1).jpg" alt="Sonrisa Watts">
+</div>
+
+<div class="media-card reveal" onclick="openZoom(this)">
+    <img src="images/FB_IMG_1720759104019781841.jpg" alt="Sonrisa Watts">
+</div>
+
+<div class="media-card reveal" onclick="openZoom(this)">
+    <img src="images/FB_IMG_5247651368015219800.jpg" alt="Sonrisa Watts">
+</div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/FB_IMG_1740100769847.jpg" alt="Sonrisa Watts"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-00-06-25-295.jpg" alt="Sonrisa Watts"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-10-18_10-52-00 (1).jpeg" alt="Sonrisa Watts"></div>
@@ -374,6 +418,18 @@
                 scrollContainer.scrollLeft += evt.deltaY;
             });
         }
+        .video-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth; /* Makes the laptop scroll feel high-end */
+    -ms-overflow-style: none;  /* Hides scrollbar IE/Edge */
+    scrollbar-width: none;     /* Hides scrollbar Firefox */
+}
+
+/* Hides scrollbar Chrome/Safari so it stays clean on laptops */
+.video-scroll-container::-webkit-scrollbar {
+    display: none;
+}
     </script>
 </body>
 </html>
