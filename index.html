@@ -121,6 +121,7 @@
             background: radial-gradient(circle at center, #0a0a0a 0%, #000 100%);
         }
 
+        /* --- UNIFIED LUXURY BOX STYLE --- */
         .video-feature-box {
             grid-column: span 2;
             background: rgba(255, 255, 255, 0.02);
@@ -132,6 +133,13 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
+        }
+
+        .feature-label {
+            font-size: 10px;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
         }
 
         .video-scroll-container {
@@ -216,7 +224,7 @@
                 <span class="feature-label">Tryna take care of my hairs</span>
                 <div class="video-scroll-container">
                     <div class="mini-video-card" onclick="openZoom(this)"><video src="images/sonrisawatts11.mp4" muted loop autoplay playsinline></video></div>
-                    <div class="mini-video-card" onclick="openZoom(this)"><img src="images/hair1.jpg"></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><img src="images/hair1.jpg" alt="Hair Care"></div>
                 </div>
             </div>
 
@@ -243,12 +251,14 @@
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/IMG-20251018-WA0041.jpg" alt="Sonrisa Watts"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-02-48-56-974.jpg" alt="Sonrisa Watts"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><video src="images/sonrisawatts11.mp4" autoplay loop muted playsinline></video></div>
+            
             <div class="media-card reveal flex items-center justify-center border border-zinc-900 bg-zinc-950 p-8 h-full">
                 <div class="text-center">
                     <p class="text-[10px] tracking-[0.8em] uppercase text-zinc-500 mb-4">— Note</p>
                     <p class="text-[11px] leading-relaxed tracking-[0.2em] uppercase text-zinc-200 italic px-4">"I never know what to do with my hair"</p>
                 </div>
             </div>
+
             <div class="media-card span-2 reveal" onclick="openZoom(this)"><img src="images/risawatts.jpg" alt="Sonrisa Watts"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-10-18_01-50-51.jpg" alt="Sonrisa Watts"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-09-16_21-59-45.jpg" alt="Sonrisa Watts"></div>
