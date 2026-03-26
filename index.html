@@ -121,7 +121,6 @@
             background: radial-gradient(circle at center, #0a0a0a 0%, #000 100%);
         }
 
-        /* --- THE FIXED COMPACT BOX STYLE --- */
         .video-feature-box {
             grid-column: span 2;
             background: rgba(255, 255, 255, 0.02);
@@ -133,7 +132,7 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
-            height: fit-content; /* Prevent vertical stretching */
+            height: fit-content; 
         }
 
         .feature-label {
@@ -150,7 +149,7 @@
             padding-bottom: 5px;
             scrollbar-width: none;
             scroll-behavior: smooth;
-            align-items: flex-start; /* Keeps items from stretching height */
+            align-items: flex-start; 
         }
 
         .video-scroll-container::-webkit-scrollbar { 
@@ -158,7 +157,7 @@
         }
 
         .mini-video-card {
-            flex: 0 0 130px; /* Force every card to be exactly 130px wide */
+            flex: 0 0 130px; 
             width: 130px;
             aspect-ratio: 9/16;
             background: #000;
@@ -232,6 +231,8 @@
                 </div>
             </div>
 
+            <div class="media-card span-2 reveal" onclick="openZoom(this)"><img src="images/update.jpg" alt="Sonrisa Watts"></div>
+
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts50.jpg" alt="Sonrisa Watts"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts20.jpg" alt="Sonrisa Watts"></div>
             <div class="media-card row-2 reveal" onclick="openZoom(this)"><video src="images/sonrisawatts.mp4" autoplay loop muted playsinline></video></div>
@@ -242,72 +243,64 @@
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawattshair.jpg" alt="Sonrisa Watts"></div>
 
             <div class="video-feature-box reveal">
-    <span class="feature-label">March Snapshots & Throwbacks — Sonrisa Watts Private Archive</span>
-    
-    <div class="video-scroll-container">
+                <span class="feature-label">March Snapshots & Throwbacks — Sonrisa Watts Private Archive</span>
+                
+                <div class="video-scroll-container">
+                    <div class="mini-video-card" onclick="openZoom(this)" title="Sonrisa Watts - Private Archive Video" itemprop="video" itemscope itemtype="https://schema.org/VideoObject">
+                        <meta itemprop="name" content="Sonrisa Watts Private Archive Video">
+                        <meta itemprop="description" content="Personal video snapshot of Sonrisa Watts.">
+                        <video src="images/VID_20250621_152444_149.mp4" aria-label="Sonrisa Watts" muted loop autoplay playsinline></video>
+                    </div>
 
-        <div class="mini-video-card" onclick="openZoom(this)" title="Sonrisa Watts - Private Archive Video" itemprop="video" itemscope itemtype="https://schema.org/VideoObject">
-            <meta itemprop="name" content="Sonrisa Watts Private Archive Video">
-            <meta itemprop="description" content="Personal video snapshot of Sonrisa Watts.">
-            <video src="images/VID_20250621_152444_149.mp4" aria-label="Sonrisa Watts" muted loop autoplay playsinline></video>
-        </div>
+                    <div class="mini-video-card" onclick="openZoom(this)" title="Sonrisa Watts - Private Archive Video" itemprop="video" itemscope itemtype="https://schema.org/VideoObject">
+                        <meta itemprop="name" content="Sonrisa Watts Personal Archive">
+                        <meta itemprop="description" content="Personal video snapshot of Sonrisa Watts.">
+                        <video src="images/VID_20251203_053441_483.mp4" aria-label="Sonrisa Watts" muted loop autoplay playsinline></video>
+                    </div>
 
-        <div class="mini-video-card" onclick="openZoom(this)" title="Sonrisa Watts - Private Archive Video" itemprop="video" itemscope itemtype="https://schema.org/VideoObject">
-            <meta itemprop="name" content="Sonrisa Watts Personal Archive">
-            <meta itemprop="description" content="Personal video snapshot of Sonrisa Watts.">
-            <video src="images/VID_20251203_053441_483.mp4" aria-label="Sonrisa Watts" muted loop autoplay playsinline></video>
-        </div>
+                    <div class="mini-video-card" onclick="openZoom(this)" title="Sonrisa Watts - March 2026 Video" itemprop="video" itemscope itemtype="https://schema.org/VideoObject">
+                        <meta itemprop="name" content="Sonrisa Watts Video March 2026">
+                        <meta itemprop="description" content="Candid video snippet of Sonrisa Watts.">
+                        <video src="images/VID_20260322_080643_207.mp4" aria-label="Sonrisa Watts" muted loop autoplay playsinline></video>
+                    </div>
 
-        <div class="mini-video-card" onclick="openZoom(this)" title="Sonrisa Watts - March 2026 Video" itemprop="video" itemscope itemtype="https://schema.org/VideoObject">
-            <meta itemprop="name" content="Sonrisa Watts Video March 2026">
-            <meta itemprop="description" content="Candid video snippet of Sonrisa Watts.">
-            <video src="images/VID_20260322_080643_207.mp4" aria-label="Sonrisa Watts" muted loop autoplay playsinline></video>
-        </div>
+                    <div class="mini-video-card" onclick="openZoom(this)" title="Sonrisa Watts - Candid Archive" itemprop="video" itemscope itemtype="https://schema.org/VideoObject">
+                        <meta itemprop="name" content="Sonrisa Watts Candid Profile">
+                        <meta itemprop="description" content="Candid video profile clip of Sonrisa Watts.">
+                        <video src="images/VID_20260322_080706_439.mp4" aria-label="Sonrisa Watts" muted loop autoplay playsinline></video>
+                    </div>
 
-        <div class="mini-video-card" onclick="openZoom(this)" title="Sonrisa Watts - Candid Archive" itemprop="video" itemscope itemtype="https://schema.org/VideoObject">
-            <meta itemprop="name" content="Sonrisa Watts Candid Profile">
-            <meta itemprop="description" content="Candid video profile clip of Sonrisa Watts.">
-            <video src="images/VID_20260322_080706_439.mp4" aria-label="Sonrisa Watts" muted loop autoplay playsinline></video>
-        </div>
-
-        <div class="mini-video-card" onclick="openZoom(this)" title="Sonrisa Watts - Research and Lifestyle" itemprop="video" itemscope itemtype="https://schema.org/VideoObject">
-            <meta itemprop="name" content="Sonrisa Watts Lifestyle Video">
-            <meta itemprop="description" content="Personal lifestyle and research snapshot of Sonrisa Watts.">
-            <video src="images/VID_20260322_082624_031.mp4" aria-label="Sonrisa Watts" muted loop autoplay playsinline></video>
-        </div>
-    </div>
-</div>
-
-          <div class="media-card reveal" onclick="openZoom(this)"><img src="images/update.jpg" alt="Sonrisa Watts"></div>
-
+                    <div class="mini-video-card" onclick="openZoom(this)" title="Sonrisa Watts - Research and Lifestyle" itemprop="video" itemscope itemtype="https://schema.org/VideoObject">
+                        <meta itemprop="name" content="Sonrisa Watts Lifestyle Video">
+                        <meta itemprop="description" content="Personal lifestyle and research snapshot of Sonrisa Watts.">
+                        <video src="images/VID_20260322_082624_031.mp4" aria-label="Sonrisa Watts" muted loop autoplay playsinline></video>
+                    </div>
+                </div>
+            </div>
 
             <div class="video-feature-box reveal">
-    <span class="feature-label">March Snapshots & Throwbacks — Sonrisa Watts Private Archive</span>
-    
-    <div class="video-scroll-container">
+                <span class="feature-label">March Snapshots & Throwbacks — Sonrisa Watts Private Archive</span>
+                
+                <div class="video-scroll-container">
+                    <div class="mini-video-card" onclick="openZoom(this)" title="Sonrisa Watts Video" itemprop="video" itemscope itemtype="https://schema.org/VideoObject">
+                        <meta itemprop="name" content="Sonrisa Watts Archive">
+                        <meta itemprop="description" content="Video clipping of Sonrisa Watts.">
+                        <video src="images/VID_20260322_082630_816.mp4" aria-label="Sonrisa Watts" muted loop autoplay playsinline></video>
+                    </div>
 
-                  <div class="mini-video-card" onclick="openZoom(this)" title="Sonrisa Watts Video" itemprop="video" itemscope itemtype="https://schema.org/VideoObject">
-            <meta itemprop="name" content="Sonrisa Watts Archive">
-            <meta itemprop="description" content="Video clipping of Sonrisa Watts.">
-            <video src="images/VID_20260322_082630_816.mp4" aria-label="Sonrisa Watts" muted loop autoplay playsinline></video>
-        </div>
+                    <div class="mini-video-card" onclick="openZoom(this)" title="Sonrisa Watts - Personal Reel" itemprop="video" itemscope itemtype="https://schema.org/VideoObject">
+                        <meta itemprop="name" content="Sonrisa Watts Personal Reel">
+                        <meta itemprop="description" content="Short video reel of Sonrisa Watts.">
+                        <video src="images/VID_20260322_082637_797.mp4" aria-label="Sonrisa Watts" muted loop autoplay playsinline></video>
+                    </div>
 
-        <div class="mini-video-card" onclick="openZoom(this)" title="Sonrisa Watts - Personal Reel" itemprop="video" itemscope itemtype="https://schema.org/VideoObject">
-            <meta itemprop="name" content="Sonrisa Watts Personal Reel">
-            <meta itemprop="description" content="Short video reel of Sonrisa Watts.">
-            <video src="images/VID_20260322_082637_797.mp4" aria-label="Sonrisa Watts" muted loop autoplay playsinline></video>
-        </div>
-
-
-        <div class="mini-video-card" onclick="openZoom(this)" title="Sonrisa Watts - Behind the Scenes" itemprop="video" itemscope itemtype="https://schema.org/VideoObject">
-            <meta itemprop="name" content="Sonrisa Watts Behind the Scenes">
-            <meta itemprop="description" content="Behind the scenes video snippet of Sonrisa Watts.">
-            <video src="images/VID_20260322_082646_274.mp4" aria-label="Sonrisa Watts" muted loop autoplay playsinline></video>
-        </div>
-
-
-            
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-04-22-56-815.jpg" alt="Sonrisa Watts"></div>
+                    <div class="mini-video-card" onclick="openZoom(this)" title="Sonrisa Watts - Behind the Scenes" itemprop="video" itemscope itemtype="https://schema.org/VideoObject">
+                        <meta itemprop="name" content="Sonrisa Watts Behind the Scenes">
+                        <meta itemprop="description" content="Behind the scenes video snippet of Sonrisa Watts.">
+                        <video src="images/VID_20260322_082646_274.mp4" aria-label="Sonrisa Watts" muted loop autoplay playsinline></video>
+                    </div>
+                </div>
+            </div> <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-04-22-56-815.jpg" alt="Sonrisa Watts"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts1.jpg" alt="Sonrisa Watts"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts53.jpg" alt="Sonrisa Watts"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><video src="images/risapalm2.mp4" autoplay loop muted playsinline></video></div>
@@ -452,7 +445,6 @@
             modal.style.display = 'flex';
         }
 
-        /* --- ALL SLIDERS LAPTOP SCROLL --- */
         document.querySelectorAll(".video-scroll-container").forEach(slider => {
             slider.addEventListener("wheel", (evt) => {
                 if (evt.deltaY !== 0) {
