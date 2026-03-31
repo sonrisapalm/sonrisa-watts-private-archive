@@ -97,22 +97,21 @@
             flex: 0 0 140px; aspect-ratio: 9/16;
             background: #000; border-radius: 10px; overflow: hidden;
         }
-        /* Only apply the extra width on tablets and laptops */
-@media (min-width: 768px) {
-    .featured-image {
-        min-width: 125% !important;
-        z-index: 10;
-        position: relative;
-    }
-}
 
-/* On phones, keep it clean and contained */
-@media (max-width: 767px) {
-    .featured-image {
-        min-width: 100% !important;
-        margin-bottom: 5px;
-    }
-}
+        @media (min-width: 768px) {
+            .featured-image {
+                min-width: 125% !important;
+                z-index: 10;
+                position: relative;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .featured-image {
+                min-width: 100% !important;
+                margin-bottom: 5px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -135,140 +134,140 @@
     <main class="max-w-[1600px] mx-auto px-4 pb-40">
         <div class="archive-grid">
             
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts52.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts.jpg"></div>
-            <div class="media-card span-2 reveal" onclick="openZoom(this)"><img src="images/2025-12-03-11-46-59-873.jpg"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts52.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card span-2 reveal" onclick="openZoom(this)"><img src="images/2025-12-03-11-46-59-873.jpg" alt="Sonrisa Watts"></div>
             
             <div class="video-feature-box reveal">
                 <span class="text-[8px] uppercase tracking-[0.4em] text-zinc-500 mb-3 block">Live Snapshots</span>
                 <div class="video-scroll-container">
-                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID-20260120-WA0027.mp4" muted loop autoplay playsinline></video></div>
-                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID_20251203_053441_483.mp4" muted loop autoplay playsinline></video></div>
-                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID-20250614-WA0030.mp4" muted loop autoplay playsinline></video></div>
-                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID-20260104-WA0024.mp4" muted loop autoplay playsinline></video></div>
-                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/sonrisa-wattsupdated.mp4" autoplay loop muted playsinline></video></div>
-                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID-20250614-WA0028.mp4" muted loop autoplay playsinline></video></div>
-                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID-20260131-WA0011.mp4" muted loop autoplay playsinline></video></div>
-                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID-20250712-WA0022.mp4.mp4" muted loop autoplay playsinline></video></div>
-                    <div class="mini-video-card" onclick="openZoom(this)"><img src="images/IMG_20260314_115502_191 (1).jpg"></div>
-                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID-20251024-WA0041.mp4" muted loop autoplay playsinline></video></div>
-                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID-20260131-WA0009.mp4" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID-20260120-WA0027.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID_20251203_053441_483.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID-20250614-WA0030.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID-20260104-WA0024.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/sonrisa-wattsupdated.mp4" title="Sonrisa Watts" autoplay loop muted playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID-20250614-WA0028.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID-20260131-WA0011.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID-20250712-WA0022.mp4.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><img src="images/IMG_20260314_115502_191 (1).jpg" alt="Sonrisa Watts"></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID-20251024-WA0041.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID-20260131-WA0009.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
                 </div>
             </div>
 
             <div class="media-card reveal featured-image" onclick="openZoom(this)">
-    <img src="images/update.jpg" style="border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-</div>
+                <img src="images/update.jpg" alt="Sonrisa Watts" style="border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            </div>
 
-<div class="mini-video-card" onclick="openZoom(this)"><img src="images/sonrisawatts50.jpg"></div>
+            <div class="mini-video-card" onclick="openZoom(this)"><img src="images/sonrisawatts50.jpg" alt="Sonrisa Watts"></div>
 
-<div class="media-card reveal featured-image" onclick="openZoom(this)">
-    <img src="images/sonrisawatts20.jpg" style="border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-</div>
+            <div class="media-card reveal featured-image" onclick="openZoom(this)">
+                <img src="images/sonrisawatts20.jpg" alt="Sonrisa Watts" style="border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            </div>
 
-<div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisa-wattsnew.jpg"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisa-wattsnew.jpg" alt="Sonrisa Watts"></div>
 
             <div class="video-feature-box reveal">
                 <span class="text-[8px] uppercase tracking-[0.4em] text-zinc-500 mb-3 block">Natural Hair Care</span>
                 <div class="video-scroll-container">
-                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/sonrisawatts11.mp4" muted loop autoplay playsinline></video></div>
-                    <div class="mini-video-card" onclick="openZoom(this)"><img src="images/hair1.jpg"></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/sonrisawatts11.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><img src="images/hair1.jpg" alt="Sonrisa Watts"></div>
                 </div>
             </div>
             
-            <div class="media-card row-2 reveal" onclick="openZoom(this)"><video src="images/sonrisawatts.mp4" autoplay loop muted playsinline></video></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts53.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-09-57-05-769.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><video src="images/sonrisawatts10.mp4" autoplay loop muted playsinline></video></div>
+            <div class="media-card row-2 reveal" onclick="openZoom(this)"><video src="images/sonrisawatts.mp4" title="Sonrisa Watts" autoplay loop muted playsinline></video></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts53.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-09-57-05-769.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><video src="images/sonrisawatts10.mp4" title="Sonrisa Watts" autoplay loop muted playsinline></video></div>
             
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/IMG-20251018-WA0017.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawattshair.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisa-wattsnew2.jpg"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/IMG-20251018-WA0017.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawattshair.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisa-wattsnew2.jpg" alt="Sonrisa Watts"></div>
 
             <div class="video-feature-box reveal">
                 <span class="text-[8px] uppercase tracking-[0.4em] text-zinc-500 mb-3 block">March Snapshots & Throwbacks</span>
                 <div class="video-scroll-container">
-                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID_20250621_152444_149.mp4" muted loop autoplay playsinline></video></div>
-                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID_20251203_053441_483.mp4" muted loop autoplay playsinline></video></div>
-                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID_20260322_080643_207.mp4" muted loop autoplay playsinline></video></div>
-                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID_20260322_080706_439.mp4" muted loop autoplay playsinline></video></div>
-                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID_20260322_082624_031.mp4" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID_20250621_152444_149.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID_20251203_053441_483.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID_20260322_080643_207.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID_20260322_080706_439.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID_20260322_082624_031.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
                 </div>
             </div>
 
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-04-22-56-815.jpg"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-04-22-56-815.jpg" alt="Sonrisa Watts"></div>
 
             <div class="video-feature-box reveal">
                 <span class="text-[8px] uppercase tracking-[0.4em] text-zinc-500 mb-3 block">Archive Clippings</span>
                 <div class="video-scroll-container">
-                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID_20260322_082630_816.mp4" muted loop autoplay playsinline></video></div>
-                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID_20260322_082637_797.mp4" muted loop autoplay playsinline></video></div>
-                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID_20260322_082646_274.mp4" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID_20260322_082630_816.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID_20260322_082637_797.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID_20260322_082646_274.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
                 </div>
             </div>
 
-            <div class="media-card reveal" onclick="openZoom(this)"><video src="images/VID_20260322_081947_139.mp4" autoplay loop muted playsinline></video></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts1.jpg"></div>
-            <div class="media-card reveal onclick="openZoom(this)"><video src="images/sonrisa-wattsupdated.mp4" autoplay loop muted playsinline></video></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><video src="images/risapalm2.mp4" autoplay loop muted playsinline></video></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><video src="images/risapalm.mp4" autoplay loop muted playsinline></video></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><video src="images/risapalm3.mp4" autoplay loop muted playsinline></video></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/risapalm.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonriswatts (3).jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-10-18_10-43-28.jpeg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-03-12-39-34-840.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/IMG_20260314_115826_533.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-10-18_10-52-00 (2).jpeg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/IMG-20251018-WA0041.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-02-48-56-974.jpg"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><video src="images/VID_20260322_081947_139.mp4" title="Sonrisa Watts" autoplay loop muted playsinline></video></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts1.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><video src="images/sonrisa-wattsupdated.mp4" title="Sonrisa Watts" autoplay loop muted playsinline></video></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><video src="images/risapalm2.mp4" title="Sonrisa Watts" autoplay loop muted playsinline></video></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><video src="images/risapalm.mp4" title="Sonrisa Watts" autoplay loop muted playsinline></video></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><video src="images/risapalm3.mp4" title="Sonrisa Watts" autoplay loop muted playsinline></video></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/risapalm.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonriswatts (3).jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-10-18_10-43-28.jpeg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-03-12-39-34-840.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/IMG_20260314_115826_533.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-10-18_10-52-00 (2).jpeg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/IMG-20251018-WA0041.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-02-48-56-974.jpg" alt="Sonrisa Watts"></div>
             
             <div class="media-card reveal flex items-center justify-center border border-zinc-900 bg-zinc-950 p-4">
                 <p class="text-[9px] leading-relaxed tracking-widest text-zinc-400 italic text-center">"I never know what to do with my hair"</p>
             </div>
 
-            <div class="media-card span-2 reveal" onclick="openZoom(this)"><img src="images/risawatts.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-10-18_01-50-51.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-09-16_21-59-45.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts78.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts51.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts12.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts093.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts232.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts249.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts75.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts21.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts22.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts56.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts0.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonriswatts (2).jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><video src="images/sonrisawatts1.mp4" autoplay loop muted playsinline></video></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/safiapalm.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/safiapalm2.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/risapalm1.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/IMG-20251018-WA0011.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/IMG-20251018-WA0000.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-00-04-06-506.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/IMG-20251018-WA0042.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-03-08-42-04-558.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts7 (1).jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-02-23-09-29-310.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-09-41-06-769.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts7 (2).jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisa-watts1.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-03-11-04-432.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-10-23_04-38-12.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/IMG_20260314_115739_884 (1).jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/IMG-20251122-WA0001.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/FB_IMG_1720759104019781841.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/FB_IMG_5247651368015219800.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/FB_IMG_1740100769847.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-00-06-25-295.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-10-18_10-52-00 (1).jpeg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-09-16_22-11-27.jpeg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/update 3.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/update2.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/495383937_23874224295534835_237346029115264525_n.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts24.jpg"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/risawatts.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-10-18_01-50-51.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-09-16_21-59-45.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts78.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-09-16_22-11-27.jpeg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts51.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts12.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts093.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts232.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts249.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts75.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts21.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts22.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts56.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts0.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonriswatts (2).jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><video src="images/sonrisawatts1.mp4" title="Sonrisa Watts" autoplay loop muted playsinline></video></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/safiapalm.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/safiapalm2.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/risapalm1.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/IMG-20251018-WA0011.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/IMG-20251018-WA0000.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-00-04-06-506.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/IMG-20251018-WA0042.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-03-08-42-04-558.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts7 (1).jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-02-23-09-29-310.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-09-41-06-769.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts7 (2).jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisa-watts1.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-03-11-04-432.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-10-23_04-38-12.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/IMG_20260314_115739_884 (1).jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/IMG-20251122-WA0001.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/FB_IMG_1720759104019781841.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/FB_IMG_5247651368015219800.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/FB_IMG_1740100769847.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-00-06-25-295.jpg" alt="Sonrisa Watts"></div>
+
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/update 3.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/update2.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/495383937_23874224295534835_237346029115264525_n.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts24.jpg" alt="Sonrisa Watts"></div>
         </div>
 
         <nav class="mt-40 flex justify-center space-x-12 reveal">
