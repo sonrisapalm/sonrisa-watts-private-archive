@@ -97,6 +97,22 @@
             flex: 0 0 140px; aspect-ratio: 9/16;
             background: #000; border-radius: 10px; overflow: hidden;
         }
+        /* Only apply the extra width on tablets and laptops */
+@media (min-width: 768px) {
+    .featured-image {
+        min-width: 125% !important;
+        z-index: 10;
+        position: relative;
+    }
+}
+
+/* On phones, keep it clean and contained */
+@media (max-width: 767px) {
+    .featured-image {
+        min-width: 100% !important;
+        margin-bottom: 5px;
+    }
+}
     </style>
 </head>
 <body>
@@ -140,14 +156,17 @@
                 </div>
             </div>
 
-            <div class="media-card reveal" style="grid-column: span 1; min-width: 125%; z-index: 10;" onclick="openZoom(this)">
-                <img src="images/update.jpg" style="border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-            </div>
-            <div class="mini-video-card" onclick="openZoom(this)"><img src="images/sonrisawatts50.jpg"></div>
-            <div class="media-card reveal" style="grid-column: span 1; min-width: 125%; z-index: 10;" onclick="openZoom(this)">
+            <div class="media-card reveal featured-image" onclick="openZoom(this)">
+    <img src="images/update.jpg" style="border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+</div>
+
+<div class="mini-video-card" onclick="openZoom(this)"><img src="images/sonrisawatts50.jpg"></div>
+
+<div class="media-card reveal featured-image" onclick="openZoom(this)">
     <img src="images/sonrisawatts20.jpg" style="border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
 </div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisa-wattsnew.jpg"></div>
+
+<div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisa-wattsnew.jpg"></div>
 
             <div class="video-feature-box reveal">
                 <span class="text-[8px] uppercase tracking-[0.4em] text-zinc-500 mb-3 block">Natural Hair Care</span>
