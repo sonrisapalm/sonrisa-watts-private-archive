@@ -17,13 +17,11 @@
             overflow-x: hidden;
         }
 
-        /* Progress Bar */
         #progress-bar {
             position: fixed; top: 0; left: 0; height: 1px;
             background: #fff; width: 0%; z-index: 10001;
         }
 
-        /* Custom Cursor */
         #custom-cursor {
             width: 12px; height: 12px; background: #fff; border-radius: 50%;
             position: fixed; pointer-events: none; z-index: 9999;
@@ -32,18 +30,16 @@
         }
         @media (min-width: 1024px) { #custom-cursor { display: block; } }
 
-        /* Animations */
         .reveal {
             opacity: 0; transform: translateY(20px);
             transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
         }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* --- THE GRID FIX --- */
         .archive-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 2 Columns on Phone for beauty */
-            gap: 10px; /* Tighter gaps on mobile */
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
             align-items: start;
         }
         
@@ -54,7 +50,6 @@
             .archive-grid { grid-template-columns: repeat(4, 1fr); gap: 3rem; } 
         }
 
-        /* Card Styling */
         .media-card {
             position: relative; overflow: hidden; width: 100%;
             background: #0a0a0a; border-radius: 2px;
@@ -65,21 +60,20 @@
             width: 100%; height: 100%; display: block; object-fit: cover;
         }
 
-        /* Grid Spanning Logic */
         .span-2 { grid-column: span 2; }
         .row-2 { grid-row: span 2; }
 
-        /* Feature Box logic for Phone */
         .video-feature-box {
-            grid-column: span 2; /* Always full width on phone to allow scrolling */
-            background: rgba(255, 255, 255, 0.03);
+            grid-column: span 2;
+            background: rgba(255, 255, 255, 0.04);
             backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px; padding: 15px;
+            border-radius: 15px; 
+            padding: 18px 15px;
             display: flex; flex-direction: column; gap: 10px;
+            margin: 5px 0;
         }
 
-        /* Navigation */
         .nav-link {
             letter-spacing: 0.5em; text-transform: uppercase;
             font-size: 9px; color: rgba(255,255,255,0.4);
@@ -94,13 +88,13 @@
         }
 
         .video-scroll-container {
-            display: flex; overflow-x: auto; gap: 10px;
+            display: flex; overflow-x: auto; gap: 12px;
             padding-bottom: 5px; scrollbar-width: none;
         }
         .video-scroll-container::-webkit-scrollbar { display: none; }
 
         .mini-video-card {
-            flex: 0 0 110px; aspect-ratio: 9/16;
+            flex: 0 0 140px; aspect-ratio: 9/16;
             background: #000; border-radius: 10px; overflow: hidden;
         }
     </style>
@@ -129,32 +123,32 @@
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts.jpg"></div>
             <div class="media-card span-2 reveal" onclick="openZoom(this)"><img src="images/2025-12-03-11-46-59-873.jpg"></div>
             
-            <div class="video-feature-box reveal" style="padding: 18px 15px; background: rgba(255, 255, 255, 0.04); border-radius: 15px; margin: 5px 0;">
-    <span class="text-[8px] uppercase tracking-[0.4em] text-zinc-500 mb-3 block">Live Snapshots</span>
-    <div class="video-scroll-container" style="gap: 12px;">
-        <div class="mini-video-card" style="flex: 0 0 140px;" onclick="openZoom(this)"><video src="images/VID-20260120-WA0027.mp4" muted loop autoplay playsinline></video></div>
-        <div class="mini-video-card" style="flex: 0 0 140px;" onclick="openZoom(this)"><video src="images/VID_20251203_053441_483.mp4" muted loop autoplay playsinline></video></div>
-        <div class="mini-video-card" style="flex: 0 0 140px;" onclick="openZoom(this)"><img src="images/sonrisawatts50.jpg"></div>
-        <div class="mini-video-card" style="flex: 0 0 140px;" onclick="openZoom(this)"><video src="images/VID-20260104-WA0024.mp4" muted loop autoplay playsinline></video></div>
-        <div class="mini-video-card" style="flex: 0 0 140px;" onclick="openZoom(this)"><video src="images/sonrisa-wattsupdated.mp4" autoplay loop muted playsinline></video></div>
-        <div class="mini-video-card" style="flex: 0 0 140px;" onclick="openZoom(this)"><video src="images/VID-20260131-WA0011.mp4" muted loop autoplay playsinline></video></div>
-        <div class="mini-video-card" style="flex: 0 0 140px;" onclick="openZoom(this)"><video src="images/VID-20250712-WA0022.mp4.mp4" muted loop autoplay playsinline></video></div>
-        <div class="mini-video-card" style="flex: 0 0 140px;" onclick="openZoom(this)"><img src="images/IMG_20260314_115502_191 (1).jpg"></div>
-        <div class="mini-video-card" style="flex: 0 0 140px;" onclick="openZoom(this)"><video src="images/VID-20250614-WA0030.mp4" muted loop autoplay playsinline></video></div>
-        <div class="mini-video-card" style="flex: 0 0 140px;" onclick="openZoom(this)"><video src="images/VID-20251024-WA0041.mp4" muted loop autoplay playsinline></video></div>
-        <div class="mini-video-card" style="flex: 0 0 140px;" onclick="openZoom(this)"><video src="images/VID-20260131-WA0009.mp4" muted loop autoplay playsinline></video></div>
-    </div>
-</div>
+            <div class="video-feature-box reveal">
+                <span class="text-[8px] uppercase tracking-[0.4em] text-zinc-500 mb-3 block">Live Snapshots</span>
+                <div class="video-scroll-container">
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID-20260120-WA0027.mp4" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID_20251203_053441_483.mp4" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID-20260104-WA0024.mp4" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/sonrisa-wattsupdated.mp4" autoplay loop muted playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID-20250614-WA0028.mp4" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID-20260131-WA0011.mp4" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID-20250712-WA0022.mp4.mp4" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><img src="images/IMG_20260314_115502_191 (1).jpg"></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID-20250614-WA0030.mp4" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID-20251024-WA0041.mp4" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID-20260131-WA0009.mp4" muted loop autoplay playsinline></video></div>
+                </div>
+            </div>
 
             <div class="media-card reveal" style="grid-column: span 1; min-width: 125%; z-index: 10;" onclick="openZoom(this)">
-    <img src="images/update.jpg" style="border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-</div>
-            <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID-20250614-WA0028.mp4" muted loop autoplay playsinline></video></div>
+                <img src="images/update.jpg" style="border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            </div>
+            <div class="mini-video-card" onclick="openZoom(this)"><img src="images/sonrisawatts50.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts20.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisa-wattsnew.jpg"></div>
 
             <div class="video-feature-box reveal">
-                <span class="text-[8px] uppercase tracking-widest text-zinc-500">Natural Hair Care</span>
+                <span class="text-[8px] uppercase tracking-[0.4em] text-zinc-500 mb-3 block">Natural Hair Care</span>
                 <div class="video-scroll-container">
                     <div class="mini-video-card" onclick="openZoom(this)"><video src="images/sonrisawatts11.mp4" muted loop autoplay playsinline></video></div>
                     <div class="mini-video-card" onclick="openZoom(this)"><img src="images/hair1.jpg"></div>
@@ -162,14 +156,16 @@
             </div>
             
             <div class="media-card row-2 reveal" onclick="openZoom(this)"><video src="images/sonrisawatts.mp4" autoplay loop muted playsinline></video></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts53.jpg"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-09-57-05-769.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><video src="images/sonrisawatts10.mp4" autoplay loop muted playsinline></video></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><video src="images/VID_20260322_081947_139.mp4" autoplay loop muted playsinline></video></div>
+            
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/IMG-20251018-WA0017.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawattshair.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisa-wattsnew2.jpg"></div>
 
             <div class="video-feature-box reveal">
-                <span class="text-[8px] uppercase tracking-widest text-zinc-500">March Snapshots & Throwbacks</span>
+                <span class="text-[8px] uppercase tracking-[0.4em] text-zinc-500 mb-3 block">March Snapshots & Throwbacks</span>
                 <div class="video-scroll-container">
                     <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID_20250621_152444_149.mp4" muted loop autoplay playsinline></video></div>
                     <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID_20251203_053441_483.mp4" muted loop autoplay playsinline></video></div>
@@ -182,7 +178,7 @@
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-04-22-56-815.jpg"></div>
 
             <div class="video-feature-box reveal">
-                <span class="text-[8px] uppercase tracking-widest text-zinc-500">Archive Clippings</span>
+                <span class="text-[8px] uppercase tracking-[0.4em] text-zinc-500 mb-3 block">Archive Clippings</span>
                 <div class="video-scroll-container">
                     <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID_20260322_082630_816.mp4" muted loop autoplay playsinline></video></div>
                     <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID_20260322_082637_797.mp4" muted loop autoplay playsinline></video></div>
@@ -191,13 +187,12 @@
             </div>
 
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts1.jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts53.jpg"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><video src="images/VID_20260322_081947_139.mp4" autoplay loop muted playsinline></video></div>
             <div class="media-card reveal" onclick="openZoom(this)"><video src="images/risapalm2.mp4" autoplay loop muted playsinline></video></div>
             <div class="media-card reveal" onclick="openZoom(this)"><video src="images/risapalm.mp4" autoplay loop muted playsinline></video></div>
             <div class="media-card reveal" onclick="openZoom(this)"><video src="images/risapalm3.mp4" autoplay loop muted playsinline></video></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/risapalm.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonriswatts (3).jpg"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-09-57-05-769.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/IMG_20260314_115826_533.jpg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-10-18_10-43-28.jpeg"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-03-12-39-34-840.jpg"></div>
@@ -266,7 +261,6 @@
     </div>
 
     <script>
-        // Progress Scroll
         window.onscroll = function() {
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -274,7 +268,6 @@
             document.getElementById("progress-bar").style.width = scrolled + "%";
         };
 
-        // Cursor
         const cursor = document.getElementById('custom-cursor');
         document.addEventListener('mousemove', e => {
             if(cursor) {
@@ -283,7 +276,6 @@
             }
         });
 
-        // Intersection Observer for Reveal
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) entry.target.classList.add('active');
@@ -291,7 +283,6 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // Modal Open
         function openZoom(el) {
             const modal = document.getElementById('zoomModal');
             const content = document.getElementById('modalContent');
