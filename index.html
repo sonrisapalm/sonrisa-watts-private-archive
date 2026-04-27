@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sonrisa Watts | Private Archive</title>
     
-    <meta name="description" content="Sonrisa Watts. Private Archive / Blog 01. Natural Hair Care, Research, and Live Snapshots.">
+    <meta name="description" content="Sonrisa Watts. Private Archive / Blog 01. Natural Hair Care, Outfits, Live Snapshots.">
     <meta property="og:title" content="Sonrisa Watts | Private Archive">
     <meta property="og:description" content="Personal Archive and Research Blog of Sonrisa Watts.">
     
@@ -94,17 +94,26 @@
             justify-content: center; align-items: center;
         }
 
-        .video-scroll-container {
-            display: flex; overflow-x: auto; gap: 12px;
-            padding-bottom: 5px; scrollbar-width: none;
+       .video-scroll-container {
+            display: flex; 
+            overflow-x: auto; 
+            gap: 12px;
+            padding-bottom: 15px; /* Extra space for smooth swiping */
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch; /* Makes it smooth on iPhone */
+            scroll-snap-type: x mandatory;
         }
         .video-scroll-container::-webkit-scrollbar { display: none; }
 
         .mini-video-card {
-            flex: 0 0 140px; aspect-ratio: 9/16;
-            background: #000; border-radius: 10px; overflow: hidden;
+            flex: 0 0 140px; /* This stops them from shrinking to fit the screen */
+            aspect-ratio: 9/16;
+            background: #000; 
+            border-radius: 10px; 
+            overflow: hidden;
+            scroll-snap-align: start;
         }
-
+        
         /* Fixed logic to prevent overlapping */
         .featured-image {
             grid-column: span 2;
@@ -181,7 +190,9 @@
             <div class="mini-video-card" onclick="openZoom(this)"><img src="images/sonrisawatts50.jpg" alt="Sonrisa Watts"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisa-wattsnew.jpg" alt="Sonrisa Watts"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><video src="images/Sonrisa120.mp4" title="Sonrisa Watts" autoplay loop muted playsinline></video></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src= "images/sonrisawatts20.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)" style="min-height: 300px;">
+    <img src="images/sonrisawatts20.jpg" alt="Sonrisa Watts">
+</div>
 
             
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts53.jpg" alt="Sonrisa Watts"></div>
@@ -238,7 +249,9 @@
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-10-18_10-52-00 (2).jpeg" alt="Sonrisa Watts"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/IMG-20251018-WA0041.jpg" alt="Sonrisa Watts"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts_picture09" alt="Sonrisa Watts"></div>
-            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts_picture40.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)" style="min-height: 280px;">
+    <img src="images/sonrisawatts_picture40.jpg" alt="Sonrisa Watts">
+</div>
             
 
 
