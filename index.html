@@ -132,6 +132,33 @@
 .group:hover img {
     opacity: 0.8 !important; /* Slight brighten during the zoom */
 }
+        .video-scroll-container {
+    display: flex;             /* Align items in a row */
+    overflow-x: auto;          /* Enable horizontal scrolling */
+    gap: 15px;                 /* Space between cards */
+    padding-bottom: 10px;      /* Space so shadows don't get cut off */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* Smooth scroll for mobile */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.video-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.video-scroll-container {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+}
+
+.mini-video-card {
+    flex: 0 0 auto;            /* Prevent cards from shrinking */
+    width: 250px;              /* Adjust width based on your design */
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+}
     </style>
 </head>
 <body>
