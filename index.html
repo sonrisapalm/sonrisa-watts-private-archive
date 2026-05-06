@@ -132,11 +132,25 @@
 .group:hover img {
     opacity: 0.8 !important; /* Slight brighten during the zoom */
 }
-        .big-mini-card {
-    flex: 0 0 300px !important; /* Makes it much wider */
-    aspect-ratio: auto !important; /* Lets the image breathe */
-    height: 100%; /* Keeps it aligned with the others */
+       /* Adjust the big card so it doesn't hide the next image */
+.big-mini-card {
+    flex: 0 0 220px !important; /* Shrunk from 300px so others are visible */
+    aspect-ratio: auto !important;
 }
+
+/* Arrow Styles */
+.scroll-wrapper { position: relative; width: 100%; }
+
+.scroll-arrow {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(0,0,0,0.6); color: white; border: none;
+    width: 30px; height: 30px; border-radius: 50%; cursor: pointer;
+    z-index: 20; display: flex; align-items: center; justify-content: center;
+    font-size: 18px; backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.1);
+}
+
+.arrow-left { left: -10px; }
+.arrow-right { right: -10px; }
     </style>
 </head>
 <body>
@@ -246,18 +260,26 @@
             <div class="media-card reveal" onclick="openZoom(this)"><video src="images/sonrisawatts10.mp4" title="Sonrisa Watts" autoplay loop muted playsinline></video></div>
 
             <div class="video-feature-box reveal">
-                <span class="text-[8px] uppercase tracking-[0.4em] text-zinc-500 mb-3 block">Natural Hair Care</span>
-                <div class="video-scroll-container">
-                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/sonrisawatts11.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
-                    <div class="mini-video-card" onclick="openZoom(this)"><img src="images/hair1.jpg" alt="Sonrisa Watts"></div>
-                    <div class="mini-video-card big-mini-card" onclick="openZoom(this)">
-    <img src="images/Sonrisawatts_hair10.jpg" alt="Sonrisa Watts" class="w-full h-full object-cover">
-</div>
-                   <div class="mini-video-card" onclick="openZoom(this)"><img src="images/Sonrisawattshair3.jpg" alt="Sonrisa Watts"></div>
-                    <div class="mini-video-card" onclick="openZoom(this)"><img src="images/sonrisawattshair.jpg" alt="Sonrisa Watts"></div>
-                    <div class="mini-video-card" onclick="openZoom(this)"><img src="images/sonrisawatts_hair.jpg" alt="Sonrisa Watts"></div>
-                </div>
+    <span class="text-[8px] uppercase tracking-[0.4em] text-zinc-500 mb-3 block">Natural Hair Care</span>
+    
+    <div class="scroll-wrapper">
+        <button class="scroll-arrow arrow-left" onclick="scrollContainer(this, -200)">&#10094;</button>
+        <button class="scroll-arrow arrow-right" onclick="scrollContainer(this, 200)">&#10095;</button>
+
+        <div class="video-scroll-container" id="hairScroll">
+            <div class="mini-video-card" onclick="openZoom(this)"><video src="images/sonrisawatts11.mp4" muted loop autoplay playsinline></video></div>
+            <div class="mini-video-card" onclick="openZoom(this)"><img src="images/hair1.jpg" alt="Sonrisa Watts"></div>
+            
+            <div class="mini-video-card big-mini-card" onclick="openZoom(this)">
+                <img src="images/Sonrisawatts_hair10.jpg" alt="Sonrisa Watts" class="w-full h-full object-cover">
             </div>
+
+            <div class="mini-video-card" onclick="openZoom(this)"><img src="images/Sonrisawattshair3.jpg" alt="Sonrisa Watts"></div>
+            <div class="mini-video-card" onclick="openZoom(this)"><img src="images/sonrisawattshair.jpg" alt="Sonrisa Watts"></div>
+            <div class="mini-video-card" onclick="openZoom(this)"><img src="images/sonrisawatts_hair.jpg" alt="Sonrisa Watts"></div>
+        </div>
+    </div>
+</div>
             
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts456.jpg" alt="Sonrisa Watts"></div>
             <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts_picture16.jpg" alt="Sonrisa Watts"></div>
