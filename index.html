@@ -266,23 +266,34 @@
             <div class="video-feature-box reveal">
     <span class="text-[8px] uppercase tracking-[0.4em] text-zinc-500 mb-3 block">Natural Hair Care</span>
     
-    <div class="scroll-wrapper">
+    <div class="scroll-wrapper relative">
         <button class="scroll-arrow arrow-left" onclick="scrollContainer(this, -200)">&#10094;</button>
         <button class="scroll-arrow arrow-right" onclick="scrollContainer(this, 200)">&#10095;</button>
 
-        <div class="video-scroll-container" id="hairScroll">
-            <div class="mini-video-card" onclick="openZoom(this)"><video src="images/sonrisawatts11.mp4" muted loop autoplay playsinline></video></div>
-            <div class="mini-video-card" onclick="openZoom(this)"><img src="images/hair1.jpg" alt="Sonrisa Watts"></div>
-            
-            <div class="mini-video-card big-mini-card" onclick="openZoom(this)">
-                <img src="images/Sonrisawatts_hair10.jpg" alt="Sonrisa Watts" class="w-full h-full object-cover">
-                
-           <div class="mini-video-card" onclick="openZoom(this)"><img src="images/Sonrisawattshair3.jpg" alt="Sonrisa Watts"></div>
+        <div class="video-scroll-container flex gap-4 overflow-x-auto pb-4" id="hairScroll">
+            <div class="mini-video-card flex-shrink-0" onclick="openZoom(this)">
+                <video src="images/sonrisawatts11.mp4" muted loop autoplay playsinline class="w-full h-full object-cover rounded-xl"></video>
             </div>
 
+            <div class="mini-video-card flex-shrink-0" onclick="openZoom(this)">
+                <img src="images/hair1.jpg" alt="Sonrisa Watts" class="w-full h-full object-cover rounded-xl">
+            </div>
             
-            <div class="mini-video-card" onclick="openZoom(this)"><img src="images/sonrisawattshair.jpg" alt="Sonrisa Watts"></div>
-            <div class="mini-video-card" onclick="openZoom(this)"><img src="images/sonrisawatts_hair.jpg" alt="Sonrisa Watts"></div>
+            <div class="mini-video-card big-mini-card flex-shrink-0" onclick="openZoom(this)">
+                <img src="images/Sonrisawatts_hair10.jpg" alt="Sonrisa Watts" class="w-full h-full object-cover rounded-xl">
+            </div>
+
+            <div class="mini-video-card flex-shrink-0" onclick="openZoom(this)">
+                <img src="images/Sonrisawattshair3.jpg" alt="Sonrisa Watts" class="w-full h-full object-cover rounded-xl">
+            </div>
+            
+            <div class="mini-video-card flex-shrink-0" onclick="openZoom(this)">
+                <img src="images/sonrisawattshair.jpg" alt="Sonrisa Watts" class="w-full h-full object-cover rounded-xl">
+            </div>
+
+            <div class="mini-video-card flex-shrink-0" onclick="openZoom(this)">
+                <img src="images/sonrisawatts_hair.jpg" alt="Sonrisa Watts" class="w-full h-full object-cover rounded-xl">
+            </div>
         </div>
     </div>
 </div>
