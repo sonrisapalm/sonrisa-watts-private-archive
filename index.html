@@ -470,6 +470,22 @@
     </div>
 
     <script>
+
+        // Global scroll function for arrows
+function scrollContainer(button, distance) {
+    // Finds the scroll container relative to the clicked arrow button
+    const wrapper = button.closest('.scroll-wrapper');
+    if (!wrapper) return;
+    
+    const container = wrapper.querySelector('.video-scroll-container');
+    if (container) {
+        container.scrollBy({
+            left: distance,
+            behavior: 'smooth'
+        });
+    }
+}
+
         window.onscroll = function() {
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
