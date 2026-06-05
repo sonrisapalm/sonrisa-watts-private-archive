@@ -110,14 +110,21 @@
         }
         .video-scroll-container::-webkit-scrollbar { display: none; }
 
-       .mini-video-card {
-    /* Change 140px to 180px or your preferred size */
-    flex: 0 0 180px; 
+      /* Base size for mobile devices */
+.mini-video-card {
+    flex: 0 0 140px; 
     aspect-ratio: 9/16;
     background: #000; 
     border-radius: 10px; 
     overflow: hidden;
     scroll-snap-align: start;
+}
+
+/* Larger size for laptops/desktops (1024px and up) */
+@media (min-width: 1024px) {
+    .mini-video-card {
+        flex: 0 0 180px;
+    }
 }
         .featured-image {
             grid-column: span 2;
