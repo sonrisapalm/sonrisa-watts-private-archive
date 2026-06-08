@@ -157,6 +157,23 @@
 
         .arrow-left { left: -10px; }
         .arrow-right { right: -10px; }
+
+        /* Base size for mobile devices - adjusted to 100px for a smaller look */
+.mini-video-card {
+    flex: 0 0 100px; 
+    aspect-ratio: 9/16;
+    background: #000; 
+    border-radius: 10px; 
+    overflow: hidden;
+    scroll-snap-align: start;
+}
+
+/* Larger size for laptops/desktops (1024px and up) */
+@media (min-width: 1024px) {
+    .mini-video-card {
+        flex: 0 0 180px; /* This stays as it was */
+    }
+}
     </style>
 </head>
 <body>
