@@ -174,9 +174,48 @@
         flex: 0 0 180px; /* This stays as it was */
     }
 }
+        /* Animated Luxurious Background */
+.luxury-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Puts it behind everything */
+    background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #000000 70%);
+    overflow: hidden;
+}
+
+.luxury-bg::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('https://grainy-gradients.vercel.app/noise.svg'); /* Subtle texture */
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+/* Subtle "Breathing" Glow */
+.glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+    animation: moveGlow 15s infinite alternate ease-in-out;
+    top: -200px;
+    left: -200px;
+}
+
+@keyframes moveGlow {
+    from { transform: translate(0, 0); }
+    to { transform: translate(300px, 300px); }
+}
     </style>
 </head>
 <body>
+    <div class="luxury-bg">
+    <div class="glow"></div>
+</div>
     <div id="progress-bar"></div>
     <div id="custom-cursor"></div>
 
