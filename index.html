@@ -359,16 +359,22 @@
             
 
  <div class="video-feature-box reveal">
-                <span class="text-[8px] uppercase tracking-[0.4em] text-zinc-500 mb-3 block">FAMILY</span>
-                <div class="scroll-wrapper relative">
-                    <button class="scroll-arrow arrow-left" onclick="scrollContainer(this, -200)">&#10094;</button>
-                    <button class="scroll-arrow arrow-right" onclick="scrollContainer(this, 200)">&#10095;</button>                 
-                        <div class="mini-video-card flex-shrink-0" onclick="openZoom(this)"><img src="images/sonrisawatts_picture03.png" alt="Sonrisa Watts" class="w-full h-full object-cover rounded-xl"></div>
-                        <div class="mini-video-card flex-shrink-0" onclick="openZoom(this)"><img src="images/sonrisawatts_picture64.jpg" alt="Sonrisa Watts" class="w-full h-full object-cover rounded-xl"></div>
-                    </div>
-                </div>
+    <span class="text-[8px] uppercase tracking-[0.4em] text-zinc-500 mb-3 block">FAMILY</span>
+    <div class="scroll-wrapper relative">
+        <button class="scroll-arrow arrow-left" onclick="scrollContainer(this, -200)">&#10094;</button>
+        <button class="scroll-arrow arrow-right" onclick="scrollContainer(this, 200)">&#10095;</button>                 
+        
+        <!-- Restored the scroll container and applied larger custom sizing to the cards -->
+        <div class="video-scroll-container flex gap-4 overflow-x-auto pb-4">
+            <div class="mini-video-card flex-shrink-0 !flex-[0_0_160px] lg:!flex-[0_0_260px] !aspect-[3/4]" onclick="openZoom(this)">
+                <img src="images/sonrisawatts_picture03.png" alt="Sonrisa Watts" class="w-full h-full object-cover rounded-xl">
             </div>
-
+            <div class="mini-video-card flex-shrink-0 !flex-[0_0_160px] lg:!flex-[0_0_260px] !aspect-[3/4]" onclick="openZoom(this)">
+                <img src="images/sonrisawatts_picture64.jpg" alt="Sonrisa Watts" class="w-full h-full object-cover rounded-xl">
+            </div>
+        </div>
+    </div>
+</div>
             
           <div class="video-feature-box reveal">
     <span class="text-[8px] uppercase tracking-[0.4em] text-zinc-500 mb-3 block">Memories</span>
